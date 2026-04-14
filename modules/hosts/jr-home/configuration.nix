@@ -26,6 +26,6 @@
     ];
 
     users.users.jr.hashedPassword = inputs.nixos-secrets.hosts.jr-home.passwd;
-    home-manager.users.USERNAME = self.homeModules.user;
+    home-manager.users.jr = self.homeModules.user;
   };
 }
