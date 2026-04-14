@@ -1,0 +1,14 @@
+input {
+  keyboard {
+    xkb {
+      layout "se"
+    }
+  }
+}
+
+binds {
+  Super+Left { focus-column-left; }
+  Super+Right { focus-column-right; }
+  Super+T { spawn "kitty"; }
+  Super+X { close-window; }
+}
