@@ -16,22 +16,14 @@
       self.diskoConfigurations.jr-home
       self.nixosModules.hardware
 
-      # shared base system and user settings
-      self.nixosModules.system
-      self.nixosModules.user
+      # shared base system config, apps and user settings
+      self.nixosModules.desktop-system
+      self.nixosModules.desktop-user
 
       # host secrets
       self.nixosModules.secrets
-
-      # apps/services with a bit of config
-      self.nixosModules.niri
-      self.nixosModules.zsh
-      self.nixosModules.firefox
     ];
 
     users.users.jr.hashedPasswordFile = config.age.secrets.passwd.path;
-
-    # TODO: remove
-    users.users.jr.openssh.authorizedKeys.keys = [ (builtins.readFile ./creds/jr-home.pub) ];
   };
 }

@@ -3,8 +3,7 @@
     disko.devices = {
       # os
       disk.disk1 = {
-        device = "/dev/sda";
-        #device = "/dev/nvme0n1";
+        device = "/dev/nvme0n1";
         type = "disk";
         content = {
           type = "gpt";
@@ -35,28 +34,27 @@
           };
         };
       };
+
       # games/containers etc
-      # disk.disk2 = {
-      #   device = "/dev/nvme1n1";
-      #   type = "disk";
+      disk.disk2 = {
+        device = "/dev/nvme1n1";
+        type = "disk";
+        content = {
+          type = "gpt";
+          partitions = {
+            storage = {
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/storage";
+                mountOptions = [ "noatime" ];
+              };
+            };
+          };
+        };
+      };
 
-      #   content = {
-      #     type = "gpt";
-
-      #     partitions = {
-      #       storage = {
-      #         size = "100%";
-
-      #         content = {
-      #           type = "filesystem";
-      #           format = "ext4";
-      #           mountpoint = "/storage";
-      #           mountOptions = ["noatime"];
-      #         };
-      #       };
-      #     };
-      #   };
-      # };
       lvm_vg = {
         pool = {
           type = "lvm_vg";
@@ -67,9 +65,7 @@
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/";
-                mountOptions = [
-                  "defaults"
-                ];
+                mountOptions = [ "noatime" ];
               };
             };
           };
