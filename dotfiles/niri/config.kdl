@@ -7,8 +7,8 @@ input {
 }
 
 binds {
-  Super+Left { focus-column-left; }
-  Super+Right { focus-column-right; }
-  Super+T { spawn "kitty"; }
-  Super+X { close-window; }
+  Mod+Left { focus-column-left; }
+  Mod+Right { focus-column-right; }
+  Mod+T { spawn "kitty"; }
+  Mod+X { close-window; }
 }

@@ -3,6 +3,7 @@
     imports = [
       self.nixosModules.git
       self.nixosModules.zsh
+      self.nixosModules.kitty
       self.nixosModules.niri
       self.nixosModules.firefox
     ];
