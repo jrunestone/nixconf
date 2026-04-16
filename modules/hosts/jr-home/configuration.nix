@@ -25,5 +25,6 @@
     ];
 
     users.users.jr.hashedPasswordFile = config.age.secrets.passwd.path;
+    users.users.jr.openssh.authorizedKeys.keys = [ ../../jr-work/creds/jr-work.pub ];
   };
 }
