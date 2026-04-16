@@ -19,6 +19,7 @@
       satty
       bat
       eza
+      vim
     ];
 
     time.timeZone = "Europe/Stockholm";
@@ -142,12 +143,19 @@
     };
 
     # ssh
-    services.openssh.enable = true;
-    services.openssh.knownHosts = {
-      "github.com" = {
-        publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
+    services.openssh = {
+      enable = true;
+      knownHosts = {
+        "github.com" = {
+          publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl";
+        };
       };
     };
+
+    systemd.tmpfiles.rules = [
+      "f /home/jr/.ssh/id_ed25519 0600 jr:users -"
+      "f /home/jr/.ssh/id_ed25519 0644 jr:users -"
+    ];
 
     # networking
     networking.networkmanager.enable = true;
