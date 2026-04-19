@@ -1,0 +1,64 @@
+{
+  "auto_install_extensions": {
+    "html": true,
+    "nix": true,
+    "kdl": true,
+    "tomorrow-theme": true,
+  },
+
+  "theme": "Tomorrow Night",
+
+  "ui_font_family": "FiraCode Nerd Font",
+  "ui_font_size": 22,
+  "ui_font_features": {
+    "calt": false,
+  },
+
+  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "buffer_font_size": 20,
+  "buffer_font_weight": 400,
+  "buffer_font_features": {
+    "calt": false,
+  },
+
+  "scroll_sensitivity": 0.7,
+  "show_wrap_guides": false,
+  "soft_wrap": "none",
+  "tab_size": 2,
+  "format_on_save": "off",
+  "middle_click_paste": false,
+
+  "gutter": {
+    "line_numbers": true,
+  },
+
+  "indent_guides": {
+    "enabled": false,
+  },
+
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+
+  "minimap": {
+    "show": "always",
+  },
+
+  "terminal": {
+    "shell": {
+      "program": "zsh",
+    },
+  },
+
+  "languages": {
+    "Nix": {
+      "formatter": {
+        "external": {
+          "command": "nixfmt",
+        },
+      },
+    },
+  },
+}

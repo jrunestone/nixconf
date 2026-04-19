@@ -3,7 +3,7 @@
     age = {
       identityPaths = [ "/home/jr/.ssh/id_ed25519" ];
       secrets = {
-        passwd.file = ./creds/passwd.age;
+        passwd.file = ./cfg/secrets/passwd.age;
       };
     };
   };

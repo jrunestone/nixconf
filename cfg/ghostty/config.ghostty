@@ -1,0 +1,7 @@
+gtk-single-instance = true
+theme = Tomorrow Night
+font-family = FiraCode Nerd Font Mono
+font-size = 16
+font-feature = -calt, -liga, -dlig
+window-padding-x = 15
+window-padding-y = 10

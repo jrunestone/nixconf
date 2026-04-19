@@ -1,0 +1,29 @@
+[
+  {
+    "bindings": {
+      "f5": "debugger::Start",
+      "f10": "debugger::StepOver",
+      "f11": "debugger::StepInto",
+      "shift-f11": "debugger::StepOut",
+      "ctrl-f5": ["task::Spawn", { "task_name": "Run" }],
+      "ctrl-shift-b": ["task::Spawn", { "task_name": "Build" }],
+      "ctrl-j": "terminal_panel::Toggle",
+      "ctrl-k": "debug_panel::ToggleFocus",
+      "ctrl-shift-j": "workspace::NewTerminal",
+      "ctrl-ö": "workspace::ToggleBottomDock",
+    },
+  },
+
+  {
+    "context": "Editor",
+
+    "bindings": {
+      "ctrl-shift-d": "editor::DuplicateLineUp",
+      "shift-delete": "editor::DeleteLine",
+      "ctrl-'": ["editor::ToggleComments", { "advance_downwards": false }],
+      "ctrl-enter": "editor::NewlineBelow",
+      "ctrl-shift-enter": "editor::NewlineAbove",
+      "ctrl-shift-space": "editor::ShowSignatureHelp",
+    },
+  },
+]

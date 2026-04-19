@@ -1,9 +1,12 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    hardware.url = "github:nixos/nixos-hardware";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
     agenix.url = "github:ryantm/agenix";
+    niri-scratchpad.url = "github:argosnothing/niri-scratchpad";
+    veila.url = "github:naurissteins/Veila";
 
     disko = {
      url = "github:nix-community/disko";
@@ -16,5 +19,5 @@
     };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree.filterNot (inputs.nixpkgs.lib.hasInfix "creds") ./modules);
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree.filterNot (inputs.nixpkgs.lib.hasInfix "cfg") ./modules);
 }

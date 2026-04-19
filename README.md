@@ -30,3 +30,17 @@ Prerequisites for target machine:
 3. Run disko to format disk(s): `nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko ./nixos-config/modules/hosts/<host>/disko-config.nix`.
 6. Install NixOS: `nixos-install --no-root-passwd --flake /etc/nixos/nixconf#<host>`.
 7. `reboot`
+
+## Todo
+* niri either:
+  * snap mouse resize to predefined col widths
+  * tile new windows automatically
+  * hotkey 2 cols 75+25
+  * hotkey window expand to fill available space
+  * autostart "zed+term", "firefox", "slack" on named workspaces
+* lock screen
+* git config
+* shell prompt
+* more keybinds (spotify, lock etc)
+* idle daemon
+* notif style

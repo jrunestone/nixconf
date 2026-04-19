@@ -6,6 +6,7 @@
 
     system.stateVersion = "25.11";
 
+    # system utilities without config
     environment.systemPackages = with pkgs; [
       zip
       unzip
@@ -14,12 +15,18 @@
       just
       ripgrep
       killall
-      wl-clipboard
       playerctl
       satty
       bat
       eza
       vim
+      simp1e-cursors
+      swaybg
+      libnotify
+      wl-clipboard
+  	  xwayland-satellite
+  	  xdg-desktop-portal-gtk
+  	  nautilus
     ];
 
     time.timeZone = "Europe/Stockholm";
@@ -38,17 +45,17 @@
     };
 
     console.keyMap = "sv-latin1";
-    hardware.enableRedistributableFirmware = true;
-    fonts.fontDir.enable = true;
     boot.loader.grub = {
       efiSupport = true;
       efiInstallAsRemovable = true;
     };
+    boot.initrd.systemd.enable = true;
 
     security.sudo.extraConfig = ''
       Defaults lecture = never
     '';
 
+    # nix settings
     nix = {
       settings = {
         experimental-features = [ "nix-command" "flakes" ];
@@ -85,6 +92,7 @@
     environment.variables.XDG_RUNTIME_DIR = "/run/user/$UID";
     security.polkit.enable = true;
     security.pam.services.greetd.enableGnomeKeyring = true;
+    security.pam.services.veila = {};
 
     # number of open files
     security.pam.loginLimits = [{
@@ -113,12 +121,45 @@
       DefaultTimeoutStopSec=10s
     '';
 
+    # portals/ui etc
+    services.dbus.enable = true;
+    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.gnome-keyring
+    ];
+
+    programs.dconf.enable = true;
+    programs.dconf.profiles.user.databases = [
+      {
+        lockAll = true;
+        settings = {
+          "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+        };
+      }
+    ];
+
+    # fonts
+    fonts = {
+        packages = [
+          pkgs.nerd-fonts.fira-code
+          pkgs.nerd-fonts.fira-mono
+          pkgs.nerd-fonts.caskaydia-cove
+          pkgs.nerd-fonts.caskaydia-mono
+        ];
+
+        fontDir.enable = true;
+        fontconfig.enable = true;
+    };
+
     # graphics
     services.hardware.openrgb.enable = true;
     hardware = {
       graphics.enable = true;
       graphics.enable32Bit = true;
       opentabletdriver.enable = true;
+      enableRedistributableFirmware = true;
     };
 
     # sound
@@ -159,5 +200,10 @@
 
     # networking
     networking.networkmanager.enable = true;
+
+    # environment variables
+    environment.sessionVariables = {
+      NIXDIR = "/etc/nixos/nixconf";
+    };
   };
 }

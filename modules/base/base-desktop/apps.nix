@@ -3,8 +3,12 @@
     imports = [
       self.nixosModules.git
       self.nixosModules.zsh
-      self.nixosModules.kitty
+      self.nixosModules.oh-my-posh
+      self.nixosModules.ghostty
+      self.nixosModules.greetd
+      self.nixosModules.mako
       self.nixosModules.niri
+      self.nixosModules.zed
       self.nixosModules.firefox
     ];
 

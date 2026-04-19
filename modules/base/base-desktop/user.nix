@@ -13,5 +13,9 @@
         "jackaudio"
       ];
     };
+
+    hjem.clobberByDefault = true;
+    hjem.users.jr.files.".jr/avatar.png".source = ../../../assets/jr.png;
+    hjem.users.jr.files.".jr/wallpaper.png".source = ../../../assets/wallpaper.png;
   };
 }
