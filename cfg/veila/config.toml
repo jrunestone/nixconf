@@ -1,0 +1,55 @@
+theme = "default"
+
+[background]
+mode = "file"
+path = "/home/jr/.jr/wallpaper.png"
+blur_radius = 12
+dim_strength = 40
+
+[lock]
+avatar_path = "/home/jr/.jr/avatar.png"
+
+[visuals.avatar]
+enabled = false
+ring_color = "#FFFFFF"
+ring_width = 2
+background_opacity = 100
+gap = 50
+
+[visuals.clock]
+enabled = true
+opacity = 80
+gap = 15
+offset_y = -300
+alignment = "center-center"
+
+[visuals.input]
+background_color = "#ffffff"
+mask_color = "#000000"
+background_opacity = 80
+height = 60
+offset_y = 40
+
+[visuals.status]
+enabled = false
+
+[visuals.eye]
+enabled = false
+
+[visuals.keyboard]
+enabled = false
+
+[visuals.username]
+enabled = false
+
+[visuals.placeholder]
+enabled = false
+
+[visuals.weather]
+enabled = false
+
+[visuals.now_playing]
+enabled = false
+
+[battery]
+enabled = true

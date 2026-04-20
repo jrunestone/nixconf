@@ -2,14 +2,15 @@
   flake.nixosModules.desktop-apps = { config, lib, pkgs, modulesPath, ... }: {
     imports = [
       self.nixosModules.git
-      self.nixosModules.zsh
-      self.nixosModules.oh-my-posh
-      self.nixosModules.ghostty
-      self.nixosModules.greetd
-      self.nixosModules.mako
-      self.nixosModules.niri
-      self.nixosModules.zed
-      self.nixosModules.firefox
+      self.nixosModules.greeter
+      self.nixosModules.compositor
+      self.nixosModules.shell
+      self.nixosModules.prompt
+      self.nixosModules.terminal
+      self.nixosModules.notifier
+      self.nixosModules.screen-locker
+      self.nixosModules.editors
+      self.nixosModules.browser
     ];
 
     environment.systemPackages = with pkgs; [

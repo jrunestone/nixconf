@@ -31,6 +31,7 @@
 
     time.timeZone = "Europe/Stockholm";
     i18n.defaultLocale = "en_US.UTF-8";
+    console.keyMap = "sv-latin1";
 
     i18n.extraLocaleSettings = {
       LC_ADDRESS = "sv_SE.UTF-8";
@@ -44,12 +45,11 @@
       LC_TIME = "sv_SE.UTF-8";
     };
 
-    console.keyMap = "sv-latin1";
+    boot.initrd.systemd.enable = true;
     boot.loader.grub = {
       efiSupport = true;
       efiInstallAsRemovable = true;
     };
-    boot.initrd.systemd.enable = true;
 
     security.sudo.extraConfig = ''
       Defaults lecture = never
@@ -83,6 +83,7 @@
     };
 
     # misc system programs/services
+
     programs.nix-ld.enable = true;
     services.fwupd.enable = true;
     services.playerctld.enable = true;
@@ -92,7 +93,6 @@
     environment.variables.XDG_RUNTIME_DIR = "/run/user/$UID";
     security.polkit.enable = true;
     security.pam.services.greetd.enableGnomeKeyring = true;
-    security.pam.services.veila = {};
 
     # number of open files
     security.pam.loginLimits = [{

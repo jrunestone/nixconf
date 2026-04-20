@@ -38,9 +38,11 @@ Prerequisites for target machine:
   * hotkey 2 cols 75+25
   * hotkey window expand to fill available space
   * autostart "zed+term", "firefox", "slack" on named workspaces
-* lock screen
-* git config
-* shell prompt
-* more keybinds (spotify, lock etc)
+* more keybinds (media ctl etc)
 * idle daemon
 * notif style
+* rofi launcher
+* better-control
+* clock+battery
+  * notification hotkey?
+  * tiny bar widgets?

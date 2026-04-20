@@ -1,5 +1,6 @@
 { self, inputs, ... }: {
-  flake.nixosModules.greetd = { config, pkgs, ... }: {
+  flake.nixosModules.greeter = { config, pkgs, ... }: {
+      # greetd/tuigreet
       services.greetd = {
         enable = true;
 

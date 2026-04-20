@@ -1,5 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+
+  "shell_integration": true,
   "blocks": [
     {
       "alignment": "left",
@@ -7,11 +9,11 @@
         {
           "foreground": "#BF616A",
           "style": "plain",
-          "template": "{{ .UserName }} ",
-          "type": "session"
+          "template": "{{ if .Env.DEVENV_NAME }}[$.Env.DEVENV_NAME]{{ else }}{{ if .Env.IN_NIX_SHELL }}[shell]{{ end }}{{ end }} ",
+          "type": "text"
         },
         {
-          "foreground": "#81A1C1",
+          "foreground": "#F0C674",
           "options": {
             "style": "full"
           },
@@ -26,16 +28,13 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#6C6C6C",
+          "foreground": "#BF616A",
           "options": {
-            "branch_ahead_icon": "<#88C0D0>\u21e1 </>",
-            "branch_behind_icon": "<#88C0D0>\u21e3 </>",
             "branch_icon": "",
-            "fetch_status": true,
-            "fetch_upstream_icon": true
+            "fetch_status": true
           },
           "style": "plain",
-          "template": "{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}<#FFAFD7>*</>{{ end }}{{ if (gt .Ahead 0) }} \ueaa1{{ end }}{{ if (gt .Behind 0) }} \uea9a{{ end }}",
+          "template": "{{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}<#F0C674>*</>{{ end }}{{ if (gt .Ahead 0) }} \ueaa1{{ end }}{{ if (gt .Behind 0) }} \uea9a{{ end }}",
           "type": "git"
         }
       ],
@@ -45,7 +44,7 @@
       "alignment": "right",
       "segments": [
         {
-          "foreground": "#A3BE8C",
+          "foreground": "#F0C674",
           "options": {
             "style": "austin"
           },
@@ -54,7 +53,7 @@
           "type": "executiontime"
         },
         {
-          "foreground": "#00C5C7",
+          "foreground": "#BF616A",
           "options": {
             "time_format": "15:04:05"
           },
@@ -70,8 +69,7 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#B48EAD",
-          "foreground_templates": ["{{ if gt .Code 0 }}#BF616A{{ end }}"],
+          "foreground": "#BF616A",
           "options": {
             "always_enabled": true
           },
@@ -82,12 +80,5 @@
       ],
       "type": "prompt"
     }
-  ],
-  "console_title_template": "{{if .Root}}(Admin){{end}} {{.PWD}}",
-  // "transient_prompt": {
-  //   "foreground": "#B48EAD",
-  //   "foreground_templates": ["{{ if gt .Code 0 }}#BF616A{{ end }}"],
-  //   "template": "$ "
-  // },
-  "version": 4
+  ]
 }

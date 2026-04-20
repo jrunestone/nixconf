@@ -1,5 +1,6 @@
 { self, inputs, ... }: {
-  flake.nixosModules.zed = { config, lib, pkgs, modulesPath, ... }: {
+  flake.nixosModules.editors = { config, lib, pkgs, modulesPath, ... }: {
+    # zed
     environment.systemPackages = [
       pkgs.zed-editor
       pkgs.nixfmt

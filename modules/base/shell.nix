@@ -1,5 +1,8 @@
 { self, inputs, ... }: {
-  flake.nixosModules.zsh = { config, lib, pkgs, modulesPath, ... }: {
+  flake.nixosModules.shell = { config, lib, pkgs, modulesPath, ... }: {
+    # zsh
+    environment.systemPackages = [ pkgs.zsh-nix-shell ];
+
     programs.zsh = {
       enable = true;
 
@@ -42,6 +45,10 @@
         nixgenerations = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
         nixcleanup = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +5; nix-collect-garbage; nix-store --optimise";
       };
+
+      shellInit = ''
+        source ${pkgs.zsh-nix-shell}/share/zsh/plugins/zsh-nix-shell/nix-shell.plugin.zsh
+      '';
     };
 
     users.defaultUserShell = pkgs.zsh;

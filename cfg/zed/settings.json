@@ -3,6 +3,7 @@
     "html": true,
     "nix": true,
     "kdl": true,
+    "toml": true,
     "tomorrow-theme": true,
   },
 
@@ -40,6 +41,7 @@
     "inline_blame": {
       "enabled": false,
     },
+    "git_gutter": "hide"
   },
 
   "minimap": {

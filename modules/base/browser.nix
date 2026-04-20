@@ -1,9 +1,12 @@
 { self, inputs, ... }: {
-  flake.nixosModules.firefox = { config, lib, pkgs, modulesPath, ... }: {
+  flake.nixosModules.browser = { config, lib, pkgs, modulesPath, ... }: {
+    # firefox
     programs.firefox = {
       enable = true;
       preferences = {
         "browser.theme.content-theme" = 0;
+        "extensions.activeThemeID" = "{3177265d-43d4-44ff-b923-55357c469a12}";
+        "sidebar.verticalTabs" = true;
       };
       policies = {
         DisableAppUpdate = true;

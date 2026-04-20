@@ -373,11 +373,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1776615277,
-        "narHash": "sha256-b0DngxW9d548Qgc01HMsg4b9DRZ6BPewLPik/c5rIJg=",
+        "lastModified": 1776656284,
+        "narHash": "sha256-UFtPxn9dgO6Yl3Qb9RBUPgPcDBgBfXK9RcuhpM68I+M=",
         "owner": "naurissteins",
         "repo": "Veila",
-        "rev": "3e2e884d9fe78d0b5763a47cc9ee47e5ce9fec97",
+        "rev": "df7460d4c8637056019f6d4b226102473305ccf3",
         "type": "github"
       },
       "original": {

@@ -1,16 +1,30 @@
-spawn-at-startup "swaybg --image ~/.jr/wallpaper.png"
+// startup
+spawn-at-startup "veilad"
+spawn-sh-at-startup "swaybg --image /home/jr/.jr/wallpaper.png"
 
-// OUTPUT
+// global settings
+screenshot-path "~/temp/%Y-%m-%d %H:%M:%S.png"
+prefer-no-csd
+
+hotkey-overlay {
+	skip-at-startup
+}
+
+clipboard {
+	disable-primary
+}
+
+// output
 output "DP-1" {
 	mode "3840x2160@120.000"
 }
 
-// WORKSPACES
+// workspace definitions
 workspace "stash" { }
 
-// KEYBINDS
+// keybinds
 binds {
-	// NAVIGATION
+	// navigation
   Mod+Left                  repeat=false    { focus-column-left; }
   Mod+Right                 repeat=false    { focus-column-right; }
   Mod+WheelScrollUp         cooldown-ms=150 { focus-column-left; }
@@ -26,26 +40,25 @@ binds {
 	Mod+Alt+Up                repeat=false    { move-window-up-or-to-workspace-up; }
 	Mod+Alt+Down              repeat=false    { move-window-down-or-to-workspace-down; }
 
+	// resizing
 	Mod+F                     repeat=false    { maximize-column; }
 	Mod+V                     repeat=false    { switch-preset-column-width; }
 	Mod+C                     repeat=false    { toggle-window-floating; }
 
-	// WORKSPACES
-
-	// APPS
+	// apps
   Mod+T                     repeat=false    { spawn "ghostty"; }
   Mod+W                     repeat=false    { spawn "firefox"; }
   Mod+S                     repeat=false    { spawn "niri-scratchpad" "target" "--spawn" "spotify" "appid" "spotify"; }
   Mod+X                     repeat=false    { close-window; }
 
-	// MISC
+	// misc
+	Mod+L                     repeat=false    { spawn "veila" "lock"; }
 	Mod+Shift+S               repeat=false    { screenshot show-pointer=false; }
-	Mod+Escape                repeat=false    { toggle-keyboard-shortcuts-inhibit; }
 }
 
-// WINDOW RULES
+// window rules
 window-rule {
-  geometry-corner-radius 6
+  // geometry-corner-radius 6
 	clip-to-geometry true
 	focus-ring {
 	  off
@@ -63,12 +76,30 @@ window-rule {
 	open-maximized true
 }
 
-// LAYOUT
+// layout
 layout {
+  gaps 0
+
   border {
-    width 3
-    active-color "#ffffff"
-    inactive-color "rgba(255, 255, 255, 0.3)"
+    off
+    // width 3
+    // active-color "#ffffff"
+    // inactive-color "rgba(255, 255, 255, 0.3)"
+  }
+
+  shadow {
+    on
+    softness 30
+    spread 5
+    offset x=0 y=5
+    color "#0007"
+  }
+
+  struts {
+    left 0
+    right 0
+    bottom 0
+    top 0
   }
 
 	preset-column-widths {
@@ -78,7 +109,7 @@ layout {
 	}
 }
 
-// INPUT
+// input
 input {
 	focus-follows-mouse
 	workspace-auto-back-and-forth
@@ -98,21 +129,9 @@ cursor {
     xcursor-size 16
 }
 
-// GESTURES
+// gestures
 gestures {
 	hot-corners {
 		off
 	}
-}
-
-// GENERAL OPTIONS
-screenshot-path "~/temp/%Y-%m-%d %H:%M:%S.png"
-prefer-no-csd
-
-hotkey-overlay {
-	skip-at-startup
-}
-
-clipboard {
-	disable-primary
 }
