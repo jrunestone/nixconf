@@ -35,7 +35,11 @@
     };
     networking.hostName = "jr-home";
 
-    # mounts
+    # certificates
+    hjem.users.jr.files.".jr/certs/rootCA.pem".source = config.age.secrets.rootCA-pem.path;
+    hjem.users.jr.files.".jr/certs/localhost.pfx".source = config.age.secrets.localhost-pfx.path;
+
+    # mounts and directories
     systemd.tmpfiles.rules = [
       "d /storage 0755 jr users -"
     ];

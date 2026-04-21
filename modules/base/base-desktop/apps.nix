@@ -18,5 +18,7 @@
       spotify
       slack
     ];
+
+    programs.localsend.enable = true;
   };
 }

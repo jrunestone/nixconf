@@ -82,8 +82,7 @@
       };
     };
 
-    # misc system programs/services
-
+    # misc system services
     programs.nix-ld.enable = true;
     services.fwupd.enable = true;
     services.playerctld.enable = true;

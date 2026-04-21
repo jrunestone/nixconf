@@ -41,7 +41,7 @@
     "inline_blame": {
       "enabled": false,
     },
-    "git_gutter": "hide"
+    "git_gutter": "hide",
   },
 
   "minimap": {
@@ -53,6 +53,12 @@
       "program": "zsh",
     },
   },
+
+  "session": {
+    "trust_all_worktrees": true,
+  },
+
+  "use_podman": true,
 
   "languages": {
     "Nix": {

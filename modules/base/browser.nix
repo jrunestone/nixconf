@@ -12,14 +12,18 @@
         DisableAppUpdate = true;
         AutofillCreditCardEnabled = false;
         AutofillAddressEnabled = false;
-        # Certificates =
+        Certificates = {
+          Install = [
+            "/home/jr/.jr/certs/rootCA.pem"
+          ];
+        };
+        PromptForDownloadLocation = false;
         DefaultDownloadDirectory = "/home/jr/temp";
         GenerativeAI = {
           Enabled = false;
         };
         NoDefaultBookmarks = true;
         OfferToSaveLogins = false;
-        PromptForDownloadLocation = true;
         TranslateEnabled = false;
         ExtensionSettings = {
           "uBlock0@raymondhill.net" = {
