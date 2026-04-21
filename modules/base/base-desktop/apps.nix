@@ -11,6 +11,7 @@
       self.nixosModules.screen-locker
       self.nixosModules.editors
       self.nixosModules.browser
+      self.nixosModules.containers
     ];
 
     environment.systemPackages = with pkgs; [

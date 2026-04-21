@@ -35,6 +35,11 @@
     };
     networking.hostName = "jr-home";
 
+    # mounts
+    systemd.tmpfiles.rules = [
+      "d /storage 0755 jr users -"
+    ];
+
     # git user
     programs.git.config.user.email = "johan85@hotmail.com";
 
