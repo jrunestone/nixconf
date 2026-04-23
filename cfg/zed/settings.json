@@ -5,6 +5,7 @@
     "kdl": true,
     "toml": true,
     "tomorrow-theme": true,
+    "csharp": true,
   },
 
   "theme": "Tomorrow Night",
@@ -61,6 +62,9 @@
   "use_podman": true,
 
   "languages": {
+    "CSharp": {
+      "tab_size": 4
+    },
     "Nix": {
       "formatter": {
         "external": {

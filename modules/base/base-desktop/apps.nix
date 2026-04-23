@@ -7,8 +7,10 @@
       self.nixosModules.shell
       self.nixosModules.prompt
       self.nixosModules.terminal
+      self.nixosModules.launcher
       self.nixosModules.notifier
       self.nixosModules.screen-locker
+      self.nixosModules.idle-daemon
       self.nixosModules.editors
       self.nixosModules.browser
       self.nixosModules.containers

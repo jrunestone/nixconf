@@ -38,10 +38,9 @@ Prerequisites for target machine:
   * hotkey 2 cols 75+25
   * hotkey window expand to fill available space
   * autostart "zed+term", "firefox", "slack" on named workspaces
-* more keybinds (media ctl etc)
-* idle daemon
+* more keybinds (media ctl, shutdown, etc)
 * notif style
-* rofi launcher
+* localsend config
 * better-control
 * clock+battery
   * notification hotkey?

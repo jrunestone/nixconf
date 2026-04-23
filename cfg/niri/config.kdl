@@ -1,6 +1,7 @@
 // startup
 spawn-at-startup "veilad"
-spawn-sh-at-startup "swaybg --image /home/jr/.jr/wallpaper.png"
+spawn-at-startup "swaybg" "--image" "/home/jr/.jr/wallpaper.png"
+spawn-at-startup "swayidle" "-C" "/home/jr/.config/swayidle/config"
 
 // global settings
 screenshot-path "~/temp/%Y-%m-%d %H:%M:%S.png"
@@ -14,7 +15,7 @@ clipboard {
 	disable-primary
 }
 
-// output
+// outputs
 output "DP-1" {
 	mode "3840x2160@120.000"
 }
@@ -52,6 +53,7 @@ binds {
   Mod+X                     repeat=false    { close-window; }
 
 	// misc
+	Mod+Space                 repeat=false    { spawn "rofi" "-show" "drun"; }
 	Mod+L                     repeat=false    { spawn "veila" "lock"; }
 	Mod+Shift+S               repeat=false    { screenshot show-pointer=false; }
 }

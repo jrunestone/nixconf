@@ -4,8 +4,16 @@
     programs.firefox = {
       enable = true;
       preferences = {
+        # dark theme
         "browser.theme.content-theme" = 0;
         "extensions.activeThemeID" = "{3177265d-43d4-44ff-b923-55357c469a12}";
+
+        # don't switch to link opened in new tab
+        "browser.tabs.loadInBackground" = true;
+
+        # open new tab next to the active tab
+        "browser.link.open_newwindow.override.external" = 7;
+
         "sidebar.verticalTabs" = true;
       };
       policies = {
