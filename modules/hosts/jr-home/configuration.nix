@@ -30,10 +30,10 @@
     # user/host setup
     users.users.jr.hashedPasswordFile = config.age.secrets.passwd.path;
     users.users.jr.openssh.authorizedKeys.keys = [ (builtins.readFile ../jr-work/cfg/jr-work.pub) ];
+    networking.hostName = "jr-home";
     environment.sessionVariables = {
       HOSTNAME = "jr-home";
     };
-    networking.hostName = "jr-home";
 
     # certificates
     hjem.users.jr.files.".jr/certs/rootCA.pem".source = config.age.secrets.rootCA-pem.path;
@@ -50,5 +50,8 @@
     # audio
     hjem.users.jr.files.".local/state/wireplumber/default-nodes".source = ./cfg/wireplumber/default-nodes;
     hjem.users.jr.files.".local/state/wireplumber/default-routes".source = ./cfg/wireplumber/default-routes;
+
+    # apps
+    environment.systemPackages = [ pkgs.moonlight-qt ];
   };
 }

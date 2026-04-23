@@ -1,5 +1,9 @@
 { self, inputs, ... }: {
   flake.nixosModules.editors = { config, lib, pkgs, modulesPath, ... }: {
+    # vim
+    programs.vim.enable = true;
+    programs.vim.defaultEditor = true;
+
     # zed
     environment.systemPackages = [
       pkgs.zed-editor

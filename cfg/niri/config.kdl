@@ -1,7 +1,7 @@
 // startup
 spawn-at-startup "veilad"
 spawn-at-startup "swaybg" "--image" "/home/jr/.jr/wallpaper.png"
-spawn-at-startup "swayidle" "-C" "/home/jr/.config/swayidle/config"
+spawn-at-startup "swayidle" "-w" "-C" "/home/jr/.config/swayidle/config"
 
 // global settings
 screenshot-path "~/temp/%Y-%m-%d %H:%M:%S.png"
@@ -42,20 +42,25 @@ binds {
 	Mod+Alt+Down              repeat=false    { move-window-down-or-to-workspace-down; }
 
 	// resizing
-	Mod+F                     repeat=false    { maximize-column; }
-	Mod+V                     repeat=false    { switch-preset-column-width; }
-	Mod+C                     repeat=false    { toggle-window-floating; }
+	Mod+F repeat=false { maximize-column; }
+	Mod+V repeat=false { switch-preset-column-width; }
+	Mod+C repeat=false { toggle-window-floating; }
 
 	// apps
-  Mod+T                     repeat=false    { spawn "ghostty"; }
-  Mod+W                     repeat=false    { spawn "firefox"; }
-  Mod+S                     repeat=false    { spawn "niri-scratchpad" "target" "--spawn" "spotify" "appid" "spotify"; }
-  Mod+X                     repeat=false    { close-window; }
+  Mod+T repeat=false { spawn "ghostty"; }
+  Mod+W repeat=false { spawn "firefox"; }
+  Mod+S repeat=false { spawn "niri-scratchpad" "target" "--spawn" "spotify" "appid" "spotify"; }
+  Mod+X repeat=false { close-window; }
+
+	// media
+	Mod+Pause  repeat=false allow-when-locked=true { spawn "playerctl" "play-pause"; }
+	Mod+Insert repeat=false allow-when-locked=true { spawn "playerctl" "play-pause"; }
 
 	// misc
-	Mod+Space                 repeat=false    { spawn "rofi" "-show" "drun"; }
-	Mod+L                     repeat=false    { spawn "veila" "lock"; }
-	Mod+Shift+S               repeat=false    { screenshot show-pointer=false; }
+	Mod+Ctrl+Delete repeat=false { spawn "shutdown" "now"; }
+	Mod+L           repeat=false { spawn "veila" "lock"; }
+	Mod+Space       repeat=false { spawn "rofi" "-show" "drun"; }
+	Mod+Shift+S     repeat=false { screenshot show-pointer=false; }
 }
 
 // window rules

@@ -19,7 +19,6 @@
       satty
       bat
       eza
-      vim
       simp1e-cursors
       swaybg
       libnotify
