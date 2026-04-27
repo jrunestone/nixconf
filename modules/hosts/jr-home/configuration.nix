@@ -53,5 +53,6 @@
 
     # apps
     environment.systemPackages = [ pkgs.moonlight-qt ];
+    programs.steam.enable = true;
   };
 }

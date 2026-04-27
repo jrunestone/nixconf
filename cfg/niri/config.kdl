@@ -40,6 +40,7 @@ binds {
 	Mod+Alt+Right             repeat=false    { move-column-right; }
 	Mod+Alt+Up                repeat=false    { move-window-up-or-to-workspace-up; }
 	Mod+Alt+Down              repeat=false    { move-window-down-or-to-workspace-down; }
+	Section                   repeat=false    { toggle-overview; }
 
 	// resizing
 	Mod+F repeat=false { maximize-column; }

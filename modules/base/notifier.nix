@@ -6,14 +6,14 @@
 
       settings = {
         global = {
-          width = 300;
+          width = 600;
           height = 300;
           frame_width = 0;
           padding = 24;
           horizontal_padding = 24;
           line_height = 0;
           font = "FiraCode Nerd Font 16";
-          format = "<b><span color='#F0C674'>%a</span></b>\n%s";
+          format = "<b><span color='#F0C674' size='18pt'>%a</span></b>\n%s";
           follow = "mouse";
           corner_radius = 7;
           icon_corner_radius = 3;

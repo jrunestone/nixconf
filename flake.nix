@@ -7,6 +7,7 @@
     agenix.url = "github:ryantm/agenix";
     niri-scratchpad.url = "github:argosnothing/niri-scratchpad";
     veila.url = "github:naurissteins/Veila";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     disko = {
      url = "github:nix-community/disko";

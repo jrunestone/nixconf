@@ -1,0 +1,21 @@
+{
+  "workbench.colorTheme": "Min Tomorrow Dark",
+  "workbench.startupEditor": "none",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "dev.containers.dockerPath": "podman",
+  "explorer.confirmDragAndDrop": false,
+  "remote.restoreForwardedPorts": false,
+  "remote.autoForwardPortsSource": "hybrid",
+  "update.mode": "none",
+  "extensions.ignoreRecommendations": true,
+  "extensions.autoUpdate": false,
+  "editor.codeLens": false,
+  "editor.inlineSuggest.enabled": false,
+  "editor.inlayHints.enabled": "off",
+  "editor.smoothScrolling": true,
+  "dotnet.formatting.organizeImportsOnFormat": true,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "telemetry.telemetryLevel": "off",
+  "git.enableSmartCommit": true,
+  "debug.onTaskErrors": "abort"
+}

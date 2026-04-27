@@ -4,6 +4,7 @@
     "nix": true,
     "kdl": true,
     "toml": true,
+    "xml": true,
     "tomorrow-theme": true,
     "csharp": true,
   },
@@ -61,10 +62,16 @@
 
   "use_podman": true,
 
+  "file_types": {
+    "HTML": ["cshtml"],
+    "XML": [".csproj"]
+  },
+
   "languages": {
     "CSharp": {
       "tab_size": 4
     },
+
     "Nix": {
       "formatter": {
         "external": {
