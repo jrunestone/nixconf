@@ -2,6 +2,7 @@
   "workbench.colorTheme": "Min Tomorrow Dark",
   "workbench.startupEditor": "none",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "window.zoomLevel": 2.5,
   "dev.containers.dockerPath": "podman",
   "explorer.confirmDragAndDrop": false,
   "remote.restoreForwardedPorts": false,

@@ -84,6 +84,14 @@ window-rule {
 	open-maximized true
 }
 
+// layer rules
+//layer-rule {
+//  match namespace="rofi"
+//  background-effect {
+//    blur true
+//  }
+//}
+
 // layout
 layout {
   gaps 0
