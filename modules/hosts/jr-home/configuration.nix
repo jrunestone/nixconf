@@ -44,6 +44,14 @@
       "d /storage 0755 jr users -"
     ];
 
+    fileSystems."/media/openmediavault" = {
+      device = "//openmediavault.local/root";
+      fsType = "cifs";
+      options = let
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      in ["${automount_opts},credentials=${config.age.secrets.omv-smb.path}"];
+    };
+
     # git user
     programs.git.config.user.email = "johan85@hotmail.com";
 
@@ -52,7 +60,8 @@
     hjem.users.jr.files.".local/state/wireplumber/default-routes".source = ./cfg/wireplumber/default-routes;
 
     # apps
-    environment.systemPackages = [ pkgs.moonlight-qt ];
+    environment.systemPackages = [ pkgs.moonlight-qt pkgs.qbittorrent ];
     programs.steam.enable = true;
+    #services.qbittorrent.enable = true;
   };
 }

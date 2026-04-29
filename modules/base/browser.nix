@@ -14,6 +14,7 @@
         # open new tab next to the active tab
         "browser.link.open_newwindow.override.external" = 7;
 
+        "browser.download.dir" = "/home/jr/tmp";
         "sidebar.verticalTabs" = true;
       };
       policies = {
@@ -26,7 +27,7 @@
           ];
         };
         PromptForDownloadLocation = false;
-        DefaultDownloadDirectory = "/home/jr/temp";
+        DefaultDownloadDirectory = "/home/jr/tmp";
         GenerativeAI = {
           Enabled = false;
         };

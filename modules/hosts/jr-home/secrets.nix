@@ -20,6 +20,12 @@
           owner = "jr";
           group = "users";
         };
+
+        omv-smb = {
+          file = ./cfg/secrets/omv-smb.age;
+          owner = "jr";
+          group = "users";
+        };
       };
     };
   };

@@ -156,7 +156,6 @@
     hardware = {
       graphics.enable = true;
       graphics.enable32Bit = true;
-      opentabletdriver.enable = true;
       enableRedistributableFirmware = true;
     };
 
