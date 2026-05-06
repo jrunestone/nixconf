@@ -18,5 +18,6 @@
   "terminal.integrated.defaultProfile.linux": "zsh",
   "telemetry.telemetryLevel": "off",
   "git.enableSmartCommit": true,
-  "debug.onTaskErrors": "abort"
+  "debug.onTaskErrors": "abort",
+  "security.workspace.trust.enabled": false
 }

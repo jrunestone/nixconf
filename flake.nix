@@ -18,6 +18,11 @@
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree.filterNot (inputs.nixpkgs.lib.hasInfix "cfg") ./modules);

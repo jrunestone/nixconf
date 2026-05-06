@@ -27,8 +27,10 @@ window {
 
 listview {
   border: 0 0 0 0;
-  padding: 23 0 0;
+  padding: 23 10 10;
   scrollbar: true;
+  background-color: #17181a;
+  margin: 0;
 }
 
 scrollbar {
@@ -45,6 +47,7 @@ entry {
 
 textbox {
   text-color: @fg;
+  margin: 0;
 }
 
 element {
@@ -94,9 +97,11 @@ sidebar {
 }
 
 inputbar {
+  background-color: #1e1f21;
   spacing:    0;
   text-color: @fg;
-  padding:    2px;
+  padding: 10;
+  margin: 0;
   children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
 }
 
@@ -117,5 +122,4 @@ textbox-prompt-sep {
   expand:     false;
   str:        ":";
   text-color: @fg;
-  margin:     0 0.3em 0 0;
 }

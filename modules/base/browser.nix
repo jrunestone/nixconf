@@ -1,61 +1,68 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.browser = { config, lib, pkgs, modulesPath, ... }: {
-    # firefox
-    programs.firefox = {
-      enable = true;
-      preferences = {
-        # dark theme
-        "browser.theme.content-theme" = 0;
-        "extensions.activeThemeID" = "{3177265d-43d4-44ff-b923-55357c469a12}";
-
-        # don't switch to link opened in new tab
-        "browser.tabs.loadInBackground" = true;
-
-        # open new tab next to the active tab
-        "browser.link.open_newwindow.override.external" = 7;
-
-        "browser.download.dir" = "/home/jr/tmp";
-        "sidebar.verticalTabs" = true;
-      };
-      policies = {
-        DisableAppUpdate = true;
-        AutofillCreditCardEnabled = false;
-        AutofillAddressEnabled = false;
-        Certificates = {
-          Install = [
-            "/home/jr/.jr/certs/rootCA.pem"
-          ];
-        };
-        PromptForDownloadLocation = false;
-        DefaultDownloadDirectory = "/home/jr/tmp";
-        GenerativeAI = {
-          Enabled = false;
-        };
-        NoDefaultBookmarks = true;
-        OfferToSaveLogins = false;
-        TranslateEnabled = false;
-        ExtensionSettings = {
-          "uBlock0@raymondhill.net" = {
-            installation_mode = "force_installed";
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-          };
-
-          "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
-            installation_mode = "force_installed";
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/proton-pass/latest.xpi";
-          };
-
-          "{d634138d-c276-4fc8-924b-40a0ea21d284}" = {
-            installation_mode = "force_installed";
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/1password-x-password-manager/latest.xpi";
-          };
-
-          "{3177265d-43d4-44ff-b923-55357c469a12}" = {
-            installation_mode = "force_installed";
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/tomorrow-night/latest.xpi";
-          };
-        };
+{ self, inputs, ... }:
+  # zen
+  let
+    extension = shortId: guid: {
+      name = guid;
+      value = {
+        install_url = "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi";
+        installation_mode = "normal_installed";
       };
     };
-  };
+
+    prefs = {
+      # dark theme
+      "browser.theme.content-theme" = 0;
+      "browser.tabs.loadInBackground" = true;
+      "browser.link.open_newwindow.override.external" = 7;
+      "browser.ctrlTab.sortByRecentlyUsed" = true;
+      "browser.engagement.ctrlTab.has-used" = true;
+      "browser.download.dir" = "/home/jr/tmp";
+      "browser.download.folderList" = 2;
+      "layout.spellcheckDefault" = 0;
+      "zen.tabs.show-newtab-vertical" = false;
+      "zen.welcome-screen.seen" = true;
+      "zen.theme.gradient.show-custom-colors" = true;
+      "zen.view.experimental-no-window-controls" = true;
+      "zen.pinned-tab-manager.close-shortcut-behavior" = "close";
+    };
+
+    extensions = [
+      (extension "ublock-origin" "uBlock0@raymondhill.net")
+      (extension "proton-pass" "78272b6fa58f4a1abaac99321d503a20@proton.me")
+      (extension "1password-x-password-manager" "{d634138d-c276-4fc8-924b-40a0ea21d284}")
+    ];
+  in
+  {
+    flake.nixosModules.browser = { config, lib, pkgs, modulesPath, ... }: {
+      environment.systemPackages = [
+        (pkgs.wrapFirefox inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped {
+            extraPrefs = lib.concatLines (
+              lib.mapAttrsToList (
+                name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
+              ) prefs
+            );
+
+            extraPolicies = {
+              DisableAppUpdate = true;
+              AutofillCreditCardEnabled = false;
+              AutofillAddressEnabled = false;
+              Certificates = {
+                Install = [
+                  "/home/jr/.jr/certs/rootCA.pem"
+                ];
+              };
+              PromptForDownloadLocation = false;
+              DefaultDownloadDirectory = "/home/jr/tmp";
+              GenerativeAI = {
+                Enabled = false;
+              };
+              NoDefaultBookmarks = true;
+              OfferToSaveLogins = false;
+              TranslateEnabled = false;
+              ExtensionSettings = builtins.listToAttrs extensions;
+            };
+          }
+        )
+      ];
+    };
 }

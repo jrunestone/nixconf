@@ -24,6 +24,10 @@
     "calt": false,
   },
 
+  "project_panel": {
+    "dock": "left"
+  },
+
   "scroll_sensitivity": 0.7,
   "show_wrap_guides": false,
   "soft_wrap": "none",

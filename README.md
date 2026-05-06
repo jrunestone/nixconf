@@ -32,16 +32,11 @@ Prerequisites for target machine:
 7. `reboot`
 
 ## Todo
-* niri either:
-  * snap mouse resize to predefined col widths
-  * tile new windows automatically
+* niri
   * hotkey 2 cols 75+25
-  * hotkey window expand to fill available space
   * autostart "zed+term", "firefox", "slack" on named workspaces
-* more keybinds (media ctl, shutdown, etc)
-* notif style
 * localsend config
-* better-control
-* clock+battery
-  * notification hotkey?
-  * tiny bar widgets?
+* (jr-work) better-control
+  * adwaita-icon-theme, adwaita-icon-theme-legacy, better-control
+  * battery indicator
+* clock

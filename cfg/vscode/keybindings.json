@@ -1,6 +1,6 @@
 [
   {
-    "key": "ctrl+'",
+    "key": "ctrl+\\",
     "command": "editor.action.commentLine",
     "when": "editorTextFocus && !editorReadonly"
   },
@@ -29,5 +29,10 @@
   {
     "key": "ctrl+shift+j",
     "command": "workbench.action.terminal.new"
+  },
+
+  {
+    "key": "ctrl+alt+j",
+    "command": "workbench.action.focusNext"
   }
 ]
