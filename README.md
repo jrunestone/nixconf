@@ -32,9 +32,8 @@ Prerequisites for target machine:
 7. `reboot`
 
 ## Todo
-* niri
-  * hotkey 2 cols 75+25
-  * autostart "zed+term", "firefox", "slack" on named workspaces
+* cleanup ~/tmp
+* zed devcontainers
 * localsend config
 * (jr-work) better-control
   * adwaita-icon-theme, adwaita-icon-theme-legacy, better-control

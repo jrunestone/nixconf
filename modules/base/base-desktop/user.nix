@@ -21,6 +21,7 @@
 
     # mounts and directories
     systemd.tmpfiles.rules = [
+      "d /home/jr/.jr/notes 0755 jr users -"
       "d /home/jr/tmp 0755 jr users -"
       "d /home/jr/src/work 0755 jr users -"
       "d /home/jr/src/home 0755 jr users -"

@@ -13,6 +13,15 @@ function redraw-prompt() {
   zle reset-prompt
 }
 
+#
+# run showkey -a to get key codes
+#
+
+# history search
+bindkey "^R" history-incremental-search-backward
+bindkey "^[[1;5A" history-beginning-search-backward
+bindkey "^[[1;5B" history-beginning-search-forward
+
 # go to start/end of line (ctrl-a, ctrl-e)
 bindkey "^A" beginning-of-line
 bindkey "^E" end-of-line

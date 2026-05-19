@@ -14,6 +14,7 @@
       self.nixosModules.editors
       self.nixosModules.browser
       self.nixosModules.containers
+      self.nixosModules.notes
     ];
 
     environment.systemPackages = with pkgs; [

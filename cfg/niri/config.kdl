@@ -46,10 +46,12 @@ binds {
 	Mod+F repeat=false { maximize-column; }
 	Mod+V repeat=false { switch-preset-column-width; }
 	Mod+C repeat=false { toggle-window-floating; }
+	Mod+1 repeat=false { spawn "/home/jr/.config/niri/scripts/layout-75-25.sh"; }
 
 	// apps
   Mod+T repeat=false { spawn "ghostty"; }
   Mod+W repeat=false { spawn "zen"; }
+  Mod+N repeat=false { spawn "niri-scratchpad" "target" "--spawn" "obsidian" "appid" "obsidian"; }
   Mod+S repeat=false { spawn "niri-scratchpad" "target" "--spawn" "spotify" "appid" "spotify"; }
   Mod+X repeat=false { close-window; }
 
@@ -76,6 +78,12 @@ window-rule {
 
 window-rule {
 	match app-id="spotify"
+	match app-id="obsidian"
+	open-on-workspace "stash"
+	open-floating true
+}
+
+window-rule {
 	match app-id="satty"
 	open-floating true
 }
