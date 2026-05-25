@@ -24,6 +24,7 @@
       extensions = with pkgs.nix-vscode-extensions.vscode-marketplace; [
         ms-vscode-remote.remote-containers
         mustafamohamad.min-tomorrow-theme
+        dnegstad.devcontainer-dev-certs-host
       ];
     };
 

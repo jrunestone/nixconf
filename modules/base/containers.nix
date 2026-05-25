@@ -12,6 +12,8 @@
         defaultNetwork.settings.dns_enabled = true;
       };
 
+      oci-containers.backend = "podman";
+
       containers.storage.settings = {
         storage = {
           driver = "overlay";

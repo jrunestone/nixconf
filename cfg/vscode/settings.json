@@ -19,5 +19,20 @@
   "telemetry.telemetryLevel": "off",
   "git.enableSmartCommit": true,
   "debug.onTaskErrors": "abort",
-  "security.workspace.trust.enabled": false
+  "security.workspace.trust.enabled": false,
+
+  "devcontainerDevCerts.userCertificates": [
+    {
+      "name": "rootCA",
+      "pemCertPath": "/home/jr/.jr/certs/rootCA.pem"
+    },
+    {
+      "name": "localhost",
+      "pfxPath": "/home/jr/.jr/certs/localhost.pfx",
+      "pfxPassword": "changeit",
+      "trustInContainer": true
+    }
+  ],
+
+  "devcontainerDevCerts.defaultKestrelCertificate": "localhost"
 }
