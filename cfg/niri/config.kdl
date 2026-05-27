@@ -52,7 +52,7 @@ binds {
   Mod+T repeat=false { spawn "ghostty"; }
   Mod+W repeat=false { spawn "zen"; }
   Mod+N repeat=false { spawn "niri-scratchpad" "target" "--spawn" "obsidian" "appid" "obsidian"; }
-  Mod+S repeat=false { spawn "niri-scratchpad" "target" "--spawn" "spotify" "appid" "spotify"; }
+  Mod+S repeat=false { spawn "niri-scratchpad" "target" "--spawn" "spotify" "appid" "Spotify"; }
   Mod+X repeat=false { close-window; }
 
 	// media
@@ -69,7 +69,6 @@ binds {
 
 // window rules
 window-rule {
-  // geometry-corner-radius 6
 	clip-to-geometry true
 	focus-ring {
 	  off
@@ -77,7 +76,7 @@ window-rule {
 }
 
 window-rule {
-	match app-id="spotify"
+	match app-id="Spotify"
 	match app-id="obsidian"
 	open-on-workspace "stash"
 	open-floating true
@@ -90,7 +89,7 @@ window-rule {
 
 window-rule {
 	match app-id="zen"
-	match app-id="Slack"
+	match app-id="slack"
 	open-maximized true
 }
 
