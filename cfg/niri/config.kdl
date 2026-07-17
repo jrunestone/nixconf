@@ -1,10 +1,9 @@
 // startup
-spawn-at-startup "veilad"
+spawn-sh-at-startup "veilad && veila lock"
 spawn-at-startup "swaybg" "--image" "/home/jr/.jr/wallpaper.png"
 spawn-at-startup "swayidle" "-w" "-C" "/home/jr/.config/swayidle/config"
 
 // global settings
-screenshot-path "~/temp/%Y-%m-%d %H:%M:%S.png"
 prefer-no-csd
 
 hotkey-overlay {
@@ -46,7 +45,7 @@ binds {
 	Mod+F repeat=false { maximize-column; }
 	Mod+V repeat=false { switch-preset-column-width; }
 	Mod+C repeat=false { toggle-window-floating; }
-	Mod+1 repeat=false { spawn "/home/jr/.config/niri/scripts/layout-75-25.sh"; }
+	Mod+1 repeat=false { spawn "/home/jr/.config/niri/layout-75-25.sh"; }
 
 	// apps
   Mod+T repeat=false { spawn "ghostty"; }
@@ -62,9 +61,11 @@ binds {
 	// misc
 	Mod+Ctrl+Delete repeat=false { spawn "shutdown" "now"; }
 	Mod+L           repeat=false { spawn "veila" "lock"; }
+	Mod+Ctrl+L      repeat=false { spawn "pkill" "swayidle"; }
+	Mod+Alt+L       repeat=false { spawn "swayidle" "-w" "-C" "/home/jr/.config/swayidle/config"; }
 	Mod+Space       repeat=false { spawn "rofi" "-show" "drun"; }
-	Mod+Ctrl+S      repeat=false { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
-	Mod+Shift+S     repeat=false { spawn-sh "grim -g \"$(slurp)\" - | satty --filename - --output-filename /home/jr/tmp/$(date '+%Y-%m-%d_%H:%M:%S').png"; }
+	Mod+Shift+S     repeat=false { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
+	Mod+Ctrl+S      repeat=false { spawn-sh "grim -g \"$(slurp)\" - | satty --filename - --output-filename /home/jr/tmp/$(date '+%Y-%m-%d_%H:%M:%S').png"; }
 }
 
 // window rules
@@ -90,6 +91,7 @@ window-rule {
 window-rule {
 	match app-id="zen"
 	match app-id="slack"
+	match app-id="com.moonlight_stream.Moonlight"
 	open-maximized true
 }
 

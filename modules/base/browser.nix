@@ -12,6 +12,7 @@
     prefs = {
       # dark theme
       "browser.theme.content-theme" = 0;
+      "browser.tabs.insertAfterCurrent" = true;
       "browser.tabs.loadInBackground" = true;
       "browser.link.open_newwindow.override.external" = 7;
       "browser.ctrlTab.sortByRecentlyUsed" = true;
@@ -24,6 +25,7 @@
       "zen.theme.gradient.show-custom-colors" = true;
       "zen.view.experimental-no-window-controls" = true;
       "zen.pinned-tab-manager.close-shortcut-behavior" = "close";
+      "zen.folders.owned-tabs-in-folder" = true;
     };
 
     extensions = [

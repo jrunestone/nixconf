@@ -32,7 +32,7 @@ Prerequisites for target machine:
 7. `reboot`
 
 ## Todo
-* cleanup ~/tmp
+* cleanup ~/tmp on boot
 * zed devcontainers
 * localsend config
 * (jr-work) better-control

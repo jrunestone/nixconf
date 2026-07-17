@@ -29,10 +29,16 @@
 
     # user/host setup
     users.users.jr.hashedPasswordFile = config.age.secrets.passwd.path;
-    users.users.jr.openssh.authorizedKeys.keys = [ (builtins.readFile ../jr-work/cfg/jr-work.pub) ];
     networking.hostName = "jr-home";
     environment.sessionVariables = {
       HOSTNAME = "jr-home";
+    };
+    users.users.jr.openssh.authorizedKeys.keys = [ (builtins.readFile ../jr-work/cfg/jr-work.pub) ];
+    services.openssh.knownHosts = {
+      homelab = {
+        extraHostNames = [ "192.168.8.243" ];
+        publicKeyFile = ./cfg/jr-homelab.pub;
+      };
     };
 
     # certificates
@@ -60,8 +66,6 @@
     hjem.users.jr.files.".local/state/wireplumber/default-routes".source = ./cfg/wireplumber/default-routes;
 
     # apps
-    environment.systemPackages = [ pkgs.moonlight-qt pkgs.qbittorrent ];
     programs.steam.enable = true;
-    #services.qbittorrent.enable = true;
   };
 }

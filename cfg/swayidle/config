@@ -1,2 +1,1 @@
-timeout 600 'veila lock'
-timeout 600 'niri msg action power-off-monitors'
+timeout 600 'veila lock && niri msg action power-off-monitors'

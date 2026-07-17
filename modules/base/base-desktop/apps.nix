@@ -20,6 +20,7 @@
     environment.systemPackages = with pkgs; [
       spotify
       slack
+      bruno
     ];
 
     programs.localsend.enable = true;
