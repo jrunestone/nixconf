@@ -123,12 +123,6 @@
       DefaultTimeoutStopSec = "10s";
     };
 
-    systemd.user.extraConfig = ''
-      DefaultLimitNOFILE=1048576
-      DefaultLimitMEMLOCK=infinity
-      DefaultTimeoutStopSec=10s
-    '';
-
     # portals/ui etc
     services.dbus.enable = true;
     xdg.portal.enable = true;

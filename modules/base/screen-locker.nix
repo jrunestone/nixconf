@@ -5,7 +5,12 @@
       inputs.veila.nixosModules.default
     ];
 
-    programs.veila.enable = true;
+    programs.veila = {
+      enable = true;
+      service.enable = true;
+      idle.enable = false;
+    };
+
     hjem.users.jr.files.".config/veila/config.toml".source = ../../cfg/veila/config.toml;
   };
 }

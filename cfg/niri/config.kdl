@@ -1,7 +1,7 @@
 // startup
-spawn-sh-at-startup "veilad && veila lock"
-spawn-at-startup "swaybg" "--image" "/home/jr/.jr/wallpaper.png"
+spawn-at-startup "veila" "lock"
 spawn-at-startup "swayidle" "-w" "-C" "/home/jr/.config/swayidle/config"
+spawn-at-startup "swaybg" "--image" "/home/jr/.jr/wallpaper.png"
 
 // global settings
 prefer-no-csd
