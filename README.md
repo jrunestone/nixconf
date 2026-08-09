@@ -6,7 +6,7 @@ Prerequisites for target machine:
 2. Either:
     1. Host machine SSH key in authorized_keys for root (nixos-anywhere requires root ssh access).
     2. Or a user with a password that can sudo without password (use this user instead of root in nixos-anywhere command).
-3. Must have secrets generated in the config repo with the host user's ssh keys (`nix run github:ryantm/agenix -- -e xxx.age`).
+3. Must have secrets generated in the config repo with the host user's ssh keys (`nix run github:ryantm/agenix -- -e xxx.age` or `nix run github:ryantm/agenix -- -e xxx.age < file`).
 
 **If installing on a computer without os (nixos installer)**
 1. Boot minimal installer
