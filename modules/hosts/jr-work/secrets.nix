@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.secrets.jr-home = { config, lib, pkgs, modulesPath, ... }: {
+  flake.nixosModules.secrets.jr-work = { config, lib, pkgs, modulesPath, ... }: {
     age = {
       identityPaths = [ "/home/jr/.ssh/id_ed25519" ];
       secrets = {
@@ -17,12 +17,6 @@
 
         localhost-pfx = {
           file = ./cfg/secrets/localhost.pfx.age;
-          owner = "jr";
-          group = "users";
-        };
-
-        omv-smb = {
-          file = ./cfg/secrets/omv-smb.age;
           owner = "jr";
           group = "users";
         };

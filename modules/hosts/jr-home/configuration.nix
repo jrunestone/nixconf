@@ -24,7 +24,7 @@
       self.nixosModules.desktop-user
 
       # host secrets
-      self.nixosModules.secrets
+      self.nixosModules.secrets.jr-home
     ];
 
     # user/host setup
