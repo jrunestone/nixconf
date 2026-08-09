@@ -24,7 +24,7 @@ Prerequisites for target machine:
 * None
 
 1. Boot minimal installer ISO.
-2. Copy existing ssh keys to /home/<username>/.ssh/id_ed25159*.
+2. Copy existing ssh keys to `/home/<username>/.ssh/id_ed25159*`.
 2. Clone config repo to somewhere appropriate like `/etc/nixos/nixconf`.
 4. Create hardware info: `nixos-generate-config --no-filesystems` and copy to repo and commit.
 1. Generate secrets (with the new host user's ssh keys) with `nix run github:ryantm/agenix -- -e xxx.age` and commit.
