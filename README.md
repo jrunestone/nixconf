@@ -15,7 +15,7 @@ Prerequisites for target machine:
 
 **Then, for both computers with or without existing os**
 1. Run `nix run nixos-anywhere -- --flake .#<hostname> --extra-files /path --generate-hardware-config nixos-generate-config ./hardware-configuration.nix root@<ip>`
-    1. --extra-files directory should include the new host user's ssh keys: /home/<username>/.ssh/id_ed25519*
+    1. --extra-files directory should include the new host user's ssh keys: `/home/<username>/.ssh/id_ed25519*`
     2. Copy the hardware info file and commit.
 3. Clone the nixos conf repo somewhere on the new machine to rebuild.
 
