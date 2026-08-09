@@ -195,6 +195,7 @@
     };
 
     systemd.tmpfiles.rules = [
+      "d /home/jr/.ssh 0644 jr:users -"
       "f /home/jr/.ssh/id_ed25519 0600 jr:users -"
       "f /home/jr/.ssh/id_ed25519 0644 jr:users -"
     ];
