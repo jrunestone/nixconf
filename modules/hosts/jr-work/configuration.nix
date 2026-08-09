@@ -33,7 +33,7 @@
     environment.sessionVariables = {
       HOSTNAME = "jr-work";
     };
-    users.users.jr.openssh.authorizedKeys.keys = [ (builtins.readFile ../jr-work/cfg/jr-work.pub) ];
+    users.users.jr.openssh.authorizedKeys.keys = [ (builtins.readFile ../jr-work/cfg/jr-home.pub) ];
 
     # known hosts
     services.openssh.knownHosts = {
