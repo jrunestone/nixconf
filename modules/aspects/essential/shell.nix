@@ -1,6 +1,5 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.shell = { config, lib, pkgs, modulesPath, ... }: {
-    # zsh
+{ lib, den, inputs, ... }: {
+  den.aspects.essential.shell.nixos = { host, user, config, pkgs, lib, ... }: {
     environment.systemPackages = [ pkgs.zsh-nix-shell ];
 
     programs.zsh = {
@@ -41,7 +40,6 @@
         nixedit = "zeditor $NIXDIR";
         nixbuild = "git -C $NIXDIR add . && nixos-rebuild --flake $NIXDIR/#$HOST --sudo";
         nixupdates = "echo 'Run nix flake update first' && nixbuild build && nix store diff-closures /run/current-system ./result && rm ./result";
-        # nixversions = "find /etc/profiles/per-user/jr/bin -type l | xargs readlink -f | cut -d- -f2- | cut -d/ -f1 | sort -u";
         nixgenerations = "sudo nix-env -p /nix/var/nix/profiles/system --list-generations";
         nixcleanup = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations +5; nix-collect-garbage; nix-store --optimise";
       };
@@ -51,7 +49,6 @@
       '';
     };
 
-    users.defaultUserShell = pkgs.zsh;
-    hjem.users.jr.files.".zshrc".source = ../../cfg/zsh/.zshrc;
+    hjem.users.${user.userName}.files.".zshrc".source = ../../../cfg/zsh/.zshrc;
   };
 }

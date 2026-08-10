@@ -9,6 +9,9 @@
     den.url = "github:denful/den";
     flake-file.url = "github:denful/flake-file";
     agenix.url = "github:ryantm/agenix";
+    niri-scratchpad.url = "github:argosnothing/niri-scratchpad";
+    veila.url = "github:naurissteins/Veila";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
@@ -22,6 +25,11 @@
 
     hjem = {
       url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

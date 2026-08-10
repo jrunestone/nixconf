@@ -1,5 +1,4 @@
-{ self, inputs, ... }:
-  # zen
+{ den, inputs, ... }:
   let
     extension = shortId: guid: {
       name = guid;
@@ -17,7 +16,6 @@
       "browser.link.open_newwindow.override.external" = 7;
       "browser.ctrlTab.sortByRecentlyUsed" = true;
       "browser.engagement.ctrlTab.has-used" = true;
-      "browser.download.dir" = "/home/jr/tmp";
       "browser.download.folderList" = 2;
       "layout.spellcheckDefault" = 0;
       "zen.tabs.show-newtab-vertical" = false;
@@ -33,15 +31,17 @@
       (extension "proton-pass" "78272b6fa58f4a1abaac99321d503a20@proton.me")
       (extension "1password-x-password-manager" "{d634138d-c276-4fc8-924b-40a0ea21d284}")
     ];
-  in
-  {
-    flake.nixosModules.browser = { config, lib, pkgs, modulesPath, ... }: {
+  in {
+    den.aspects.desktop.browser.nixos = { host, user, config, pkgs, lib, ... }: {
       environment.systemPackages = [
         (pkgs.wrapFirefox inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.zen-browser-unwrapped {
             extraPrefs = lib.concatLines (
               lib.mapAttrsToList (
                 name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
-              ) prefs
+              ) (lib.mkMerge [
+                prefs
+                { "browser.download.dir" = "/home/${user.userName}/tmp"; }
+              ])
             );
 
             extraPolicies = {
@@ -50,11 +50,11 @@
               AutofillAddressEnabled = false;
               Certificates = {
                 Install = [
-                  "/home/jr/.jr/certs/rootCA.pem"
+                  "/home/${user.userName}/.${user.userName}/certs/rootCA.pem"
                 ];
               };
               PromptForDownloadLocation = false;
-              DefaultDownloadDirectory = "/home/jr/tmp";
+              DefaultDownloadDirectory = "/home/${user.userName}/tmp";
               GenerativeAI = {
                 Enabled = false;
               };
@@ -67,4 +67,4 @@
         )
       ];
     };
-}
+  }

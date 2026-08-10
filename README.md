@@ -33,10 +33,14 @@ Prerequisites for target machine:
 7. `reboot`
 
 ## Todo
-* cleanup ~/tmp on boot
 * zed devcontainers
 * localsend config
 * (jr-work) better-control
   * adwaita-icon-theme, adwaita-icon-theme-legacy, better-control
   * battery indicator
 * clock
+
+## NEW DEN CONFIG
+* All hosts read from hosts/base/{global.nix, host.nix}
+* All users read from hosts/base/user.nix
+* All hosts read from aspects/essential.nix

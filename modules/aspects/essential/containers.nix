@@ -1,6 +1,5 @@
-{ self, inputs, ... }: {
-  flake.nixosModules.containers = { config, lib, pkgs, modulesPath, ... }: {
-    # podman
+{ lib, den, ... }: {
+  den.aspects.essential.containers.nixos = { host, user, config, pkgs, lib, ... }: {
     environment.systemPackages = [
       pkgs.podman-compose
     ];
@@ -21,6 +20,6 @@
       };
     };
 
-    hjem.users.jr.files.".config/containers/storage.conf".source = ../../cfg/podman/storage.conf;
+    hjem.users.${user.userName}.files.".config/containers/storage.conf".source = ../../../cfg/podman/storage.conf;
   };
 }
