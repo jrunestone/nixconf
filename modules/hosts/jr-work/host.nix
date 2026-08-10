@@ -24,6 +24,8 @@
 
       hjem.users.jr.files.".jr/certs/rootCA.pem".source = config.age.secrets.rootCA-pem.path;
       hjem.users.jr.files.".jr/certs/localhost.pfx".source = config.age.secrets.localhost-pfx.path;
+
+      users.users.jr.openssh.authorizedKeys.keys = [ (builtins.readFile ../jr-home/_cfg/jr-home.pub) ];
     };
   };
 }
