@@ -4,21 +4,28 @@
 
     age = {
       identityPaths = [ "/home/jr/.ssh/id_ed25519" ];
+
       secrets = {
+        git = {
+          file = ./_cfg/secrets/git.age;
+          owner = "jr";
+          group = "users";
+        };
+
         passwd = {
-          file = ./cfg/secrets/passwd.age;
+          file = ./_cfg/secrets/passwd.age;
           owner = "jr";
           group = "users";
         };
 
         rootCA-pem = {
-          file = ./cfg/secrets/rootCA.pem.age;
+          file = ./_cfg/secrets/rootCA.pem.age;
           owner = "jr";
           group = "users";
         };
 
         localhost-pfx = {
-          file = ./cfg/secrets/localhost.pfx.age;
+          file = ./_cfg/secrets/localhost.pfx.age;
           owner = "jr";
           group = "users";
         };

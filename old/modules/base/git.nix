@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
   flake.nixosModules.git = { config, pkgs, ... }: {
-      environment.systemPackages = [ pkgs.gitstatus ];
+      environment.systemPackages = [ pkgs.gitstatus ]; # todo: activate
 
       programs.git = {
         enable = true;

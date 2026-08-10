@@ -1,5 +1,5 @@
-{ inputs, config, lib, ... }: {
-  den.aspects.jr-home.nixos = { modulesPath, ... }: {
+{ den, ... }: {
+  den.aspects.jr-home.nixos = { inputs, lib, config, modulesPath, ... }: {
     imports = [
       (modulesPath + "/installer/scan/not-detected.nix")
     ];

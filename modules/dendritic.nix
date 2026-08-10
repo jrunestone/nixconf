@@ -6,10 +6,14 @@
   ];
 
   flake-file.inputs = {
-    hardware.url = "github:nixos/nixos-hardware";
     den.url = "github:denful/den";
     flake-file.url = "github:denful/flake-file";
     agenix.url = "github:ryantm/agenix";
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     disko = {
      url = "github:nix-community/disko";
