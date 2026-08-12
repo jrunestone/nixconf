@@ -20,7 +20,11 @@
     ];
 
     nixos = { inputs, config, pkgs, ... }: {
-      environment.systemPackages = [ ];
+      environment.systemPackages = with pkgs; [
+        moonlight-qt
+      ];
+
+      programs.steam.enable = true;
 
       hjem.users.jr.files.".jr/certs/rootCA.pem".source = config.age.secrets.rootCA-pem.path;
       hjem.users.jr.files.".jr/certs/localhost.pfx".source = config.age.secrets.localhost-pfx.path;
@@ -46,9 +50,6 @@
         in
           ["${automount_opts},credentials=${config.age.secrets.omv-smb.path}"];
       };
-
-      # apps
-      programs.steam.enable = true;
     };
   };
 }
