@@ -9,7 +9,7 @@
   "remote.autoForwardPortsSource": "hybrid",
   "update.mode": "none",
   "extensions.ignoreRecommendations": true,
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "off",
   "editor.codeLens": false,
   "editor.inlineSuggest.enabled": false,
   "editor.inlayHints.enabled": "off",
