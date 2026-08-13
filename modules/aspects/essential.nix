@@ -23,6 +23,7 @@
 
       programs.vim.enable = true;
       programs.vim.defaultEditor = true;
+      services.upower.enable = true;
     };
   };
 }

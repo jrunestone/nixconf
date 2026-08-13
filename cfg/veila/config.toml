@@ -7,9 +7,10 @@ blur_radius = 12
 dim_strength = 40
 
 [lock]
-avatar_path = "/home/jr/.jr/avatar.png"
+auth_backoff_base_ms = 100
 
 [visuals.avatar]
+image_path = "/home/jr/.jr/avatar.png"
 enabled = false
 ring_color = "#FFFFFF"
 ring_width = 2

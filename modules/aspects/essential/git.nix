@@ -1,5 +1,5 @@
 { den, lib, ... }: {
-  den.aspects.essential.git.nixos = { config, pkgs, ... }: {
+  den.aspects.essential.git.nixos = { host, user, config, pkgs, ... }: {
     environment.systemPackages = [];
 
     programs.git = {
@@ -24,9 +24,9 @@
             insteadOf = "https://github.com/";
           };
         };
-
-        extraConfig.include.path = config.age.secrets.git.path;
       };
     };
+
+    hjem.users.${user.userName}.files.".config/git/config".source = config.age.secrets.git.path;
   };
 }

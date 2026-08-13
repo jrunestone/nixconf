@@ -14,25 +14,20 @@
 
   den.aspects.base-user = { host, user, ... }: {
     nixos = { config, ... }: {
-      users.users.${user.userName} = {
-        extraGroups = [
-          "video"
-          "audio"
-          "jackaudio"
-        ];
-
-        hashedPasswordFile = config.age.secrets.passwd.path;
-      };
+      users.users.${user.userName}.hashedPasswordFile = config.age.secrets.passwd.path;
 
       fileSystems."/home/${user.userName}/tmp" = {
         device = "none";
         fsType = "tmpfs";
-        options = [ "mode=755" ];
+        options = [ "uid=1000" "gid=100" "mode=755" ];
       };
 
       systemd.tmpfiles.rules = [
+        "d /storage 0755 ${user.userName} users -"
+        "d /etc/nixos/nixconf 0755 ${user.userName} users -"
+        "f /home/${user.userName}/.ssh 0644 ${user.userName}:users -"
         "f /home/${user.userName}/.ssh/id_ed25519 0600 ${user.userName}:users -"
-        "f /home/${user.userName}/.ssh/id_ed25519 0644 ${user.userName}:users -"
+        "f /home/${user.userName}/.ssh/id_ed25519.pub 0644 ${user.userName}:users -"
       ];
     };
   };

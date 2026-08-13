@@ -1,38 +1,38 @@
 { inputs, ... }: {
-  den.aspects.jr-home.nixos = {
+  den.aspects.jr-home.secrets.nixos = { host, user, lib }: {
     imports = [ inputs.agenix.nixosModules.default ];
 
     age = {
-      identityPaths = [ "/home/jr/.ssh/id_ed25519" ];
+      identityPaths = [ "/home/${user.userName}/.ssh/id_ed25519" ];
 
       secrets = {
         git = {
           file = ./_cfg/secrets/git.age;
-          owner = "jr";
+          owner = user.userName;
           group = "users";
         };
 
         passwd = {
           file = ./_cfg/secrets/passwd.age;
-          owner = "jr";
+          owner = user.userName;
           group = "users";
         };
 
         rootCA-pem = {
           file = ./_cfg/secrets/rootCA.pem.age;
-          owner = "jr";
+          owner = user.userName;
           group = "users";
         };
 
         localhost-pfx = {
           file = ./_cfg/secrets/localhost.pfx.age;
-          owner = "jr";
+          owner = user.userName;
           group = "users";
         };
 
         omv-smb = {
           file = ./_cfg/secrets/omv-smb.age;
-          owner = "jr";
+          owner = user.userName;
           group = "users";
         };
       };

@@ -1,7 +1,6 @@
 // startup
-spawn-sh-at-startup "sleep 1 && veila lock"
-spawn-at-startup "swayidle" "-w" "-C" "/home/jr/.config/swayidle/config"
-spawn-at-startup "swaybg" "--image" "/home/jr/.jr/wallpaper.png"
+spawn-sh-at-startup "swayidle -w -C $HOME/.config/swayidle/config"
+spawn-sh-at-startup "swaybg --image $HOME/.jr/wallpaper.png"
 
 // global settings
 prefer-no-csd
@@ -15,8 +14,14 @@ clipboard {
 }
 
 // outputs
+// jr-home
 output "DP-1" {
 	mode "3840x2160@120.000"
+}
+
+// jr-work
+output "eDP-1" {
+  scale 1.0
 }
 
 // workspace definitions
@@ -33,6 +38,11 @@ binds {
 	Mod+Ctrl+Up               repeat=false    { focus-workspace-up; }
   Mod+Up                    repeat=false    { focus-window-or-workspace-up; }
 	Mod+Ctrl+Down             repeat=false    { focus-workspace-down; }
+	Mod+Ctrl+Left             repeat=false    { focus-monitor-left; }
+	Mod+Ctrl+Right            repeat=false    { focus-monitor-right; }
+	Mod+Shift+WheelScrollUp   cooldown-ms=150 { focus-monitor-left; }
+	Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-monitor-right; }
+	Mod+Ctrl+WheelScrollDown  cooldown-ms=150 { focus-workspace-down; }
   Mod+Ctrl+WheelScrollUp    cooldown-ms=150 { focus-workspace-up; }
 	Mod+Ctrl+WheelScrollDown  cooldown-ms=150 { focus-workspace-down; }
 	Mod+Alt+Left              repeat=false    { move-column-left; }
@@ -45,7 +55,7 @@ binds {
 	Mod+F repeat=false { maximize-column; }
 	Mod+V repeat=false { switch-preset-column-width; }
 	Mod+C repeat=false { toggle-window-floating; }
-	Mod+1 repeat=false { spawn "/home/jr/.config/niri/layout-75-25.sh"; }
+	Mod+1 repeat=false { spawn-sh "$HOME/.config/niri/layout-75-25.sh"; }
 
 	// apps
   Mod+T repeat=false { spawn "ghostty"; }
@@ -62,10 +72,10 @@ binds {
 	Mod+Ctrl+Delete repeat=false { spawn "shutdown" "now"; }
 	Mod+L           repeat=false { spawn "veila" "lock"; }
 	Mod+Ctrl+L      repeat=false { spawn "pkill" "swayidle"; }
-	Mod+Alt+L       repeat=false { spawn "swayidle" "-w" "-C" "/home/jr/.config/swayidle/config"; }
+	Mod+Alt+L       repeat=false { spawn-sh "pgrep -x swayidle || swayidle -w -C $HOME/.config/swayidle/config"; }
 	Mod+Space       repeat=false { spawn "rofi" "-show" "drun"; }
 	Mod+Shift+S     repeat=false { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
-	Mod+Ctrl+S      repeat=false { spawn-sh "grim -g \"$(slurp)\" - | satty --filename - --output-filename /home/jr/tmp/$(date '+%Y-%m-%d_%H:%M:%S').png"; }
+	Mod+Ctrl+S      repeat=false { spawn-sh "grim -g \"$(slurp)\" - | satty --filename - --output-filename $HOME/tmp/$(date '+%Y-%m-%d_%H:%M:%S').png"; }
 }
 
 // window rules
@@ -146,6 +156,10 @@ input {
 
 		repeat-delay 250
 		repeat-rate 50
+  }
+
+  touchpad {
+    tap
   }
 }
 

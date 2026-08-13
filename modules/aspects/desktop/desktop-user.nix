@@ -9,6 +9,7 @@
     systemd.tmpfiles.rules = [
       "d /home/${user.userName}/.${user.userName} 0755 ${user.userName} users -"
       "d /home/${user.userName}/.${user.userName}/notes 0755 ${user.userName} users -"
+      "d /home/${user.userName}/.${user.userName}/src/ 0755 ${user.userName} users -"
       "d /home/${user.userName}/.${user.userName}/src/work 0755 ${user.userName} users -"
       "d /home/${user.userName}/.${user.userName}/src/home 0755 ${user.userName} users -"
     ];

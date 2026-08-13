@@ -11,6 +11,7 @@
   den.aspects.jr-work = {
     includes = [
       den.aspects.desktop
+      den.aspects.jr-work.secrets
     ];
 
     imports = [
@@ -20,7 +21,14 @@
     ];
 
     nixos = { inputs, config, pkgs, ... }: {
-      environment.systemPackages = [ ];
+      environment.systemPackages = with pkgs; [
+        adwaita-icon-theme
+        adwaita-icon-theme-legacy
+        better-control
+      ];
+
+      hardware.bluetooth.enable = true;
+      hardware.bluetooth.powerOnBoot = true;
 
       hjem.users.jr.files.".jr/certs/rootCA.pem".source = config.age.secrets.rootCA-pem.path;
       hjem.users.jr.files.".jr/certs/localhost.pfx".source = config.age.secrets.localhost-pfx.path;

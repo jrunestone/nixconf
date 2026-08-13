@@ -79,6 +79,7 @@
     programs.dconf.enable = true;
     security.polkit.enable = true;
     security.pam.services.greetd.enableGnomeKeyring = true;
+    security.pam.services.login.enableGnomeKeyring = true;
     environment.variables.XDG_RUNTIME_DIR = "/run/user/$UID";
     environment.sessionVariables.NIXDIR = "/etc/nixos/nixconf";
 

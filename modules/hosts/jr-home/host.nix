@@ -11,6 +11,7 @@
   den.aspects.jr-home = {
     includes = [
       den.aspects.desktop
+      den.aspects.jr-home.secrets
     ];
 
     imports = [

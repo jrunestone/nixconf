@@ -8,7 +8,7 @@
       };
     };
 
-    prefs = {
+    prefs = userName: {
       # dark theme
       "browser.theme.content-theme" = 0;
       "browser.tabs.insertAfterCurrent" = true;
@@ -17,11 +17,17 @@
       "browser.ctrlTab.sortByRecentlyUsed" = true;
       "browser.engagement.ctrlTab.has-used" = true;
       "browser.download.folderList" = 2;
+      "browser.download.dir" = "/home/${userName}/tmp";
+      "browser.startup.page" = 3;
+      "browser.sessionstore.resume_from_crash" = true;
+      "layout.css.devPixelsPerPx" = "1.2";
       "layout.spellcheckDefault" = 0;
+      "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       "zen.tabs.show-newtab-vertical" = false;
       "zen.welcome-screen.seen" = true;
       "zen.theme.gradient.show-custom-colors" = true;
       "zen.view.experimental-no-window-controls" = true;
+      "zen.view.compact.show-sidebar-and-toolbar-on-hover" = false;
       "zen.pinned-tab-manager.close-shortcut-behavior" = "close";
       "zen.folders.owned-tabs-in-folder" = true;
     };
@@ -38,10 +44,7 @@
             extraPrefs = lib.concatLines (
               lib.mapAttrsToList (
                 name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
-              ) (lib.mkMerge [
-                prefs
-                { "browser.download.dir" = "/home/${user.userName}/tmp"; }
-              ])
+              ) (prefs user.userName)
             );
 
             extraPolicies = {
@@ -66,5 +69,11 @@
           }
         )
       ];
+
+      hjem.users.${user.userName} = {
+        files.".config/zen/profiles.ini".source = ../../../cfg/zen/profiles.ini;
+        files.".config/zen/0.default/zen-keyboard-shortcuts.json".source = ../../../cfg/zen/zen-keyboard-shortcuts.json;
+        files.".config/zen/0.default/chrome/userChrome.css".source = ../../../cfg/zen/userChrome.css;
+      };
     };
   }

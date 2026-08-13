@@ -19,10 +19,20 @@ Prerequisites for target machine:
 * All users read from hosts/base/user.nix
 * All hosts read from aspects/essential.nix
 
+## Post
+* Keyring has to be unlocked once
+* Sign in to Zen and set keybinds and zoom and settings and extension settings and space settings
+* Pair headphones with better-control
+* Pair keyboard with better-control
+  * Hold Alt+Pn until Caps Lock flashes then press Pn+J once then pair
+
 ## Todo
-* zed devcontainers
+* better-control dark theme
+* [ssh] prompt
+* change 2fa code hotmail, not working
+
+* zed devcontainers (devsy)
 * localsend config
-* (jr-work) better-control
-  * adwaita-icon-theme, adwaita-icon-theme-legacy, better-control
+* (jr-work)
   * battery indicator
 * clock?
