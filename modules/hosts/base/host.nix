@@ -9,7 +9,7 @@
   };
 
   den.default.nixos = { pkgs, ... }: {
-    system.stateVersion = "26.11";
+    system.stateVersion = "26.05";
 
     time.timeZone = "Europe/Stockholm";
     console.keyMap = "sv-latin1";

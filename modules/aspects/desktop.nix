@@ -2,6 +2,7 @@
   den.aspects.desktop = {
     includes = [
       den.aspects.desktop.desktop-user
+      den.aspects.desktop.bar
       den.aspects.desktop.browser
       den.aspects.desktop.compositor
       den.aspects.desktop.editors

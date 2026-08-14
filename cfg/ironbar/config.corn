@@ -1,0 +1,17 @@
+{
+  name = "default"
+  position = "bottom"
+  exclusive_zone = false
+  start = []
+  center = []
+  end = [
+    {
+      type = "battery"
+    }
+    {
+      type = "clock"
+      format = "%H:%M"
+      show_week_numbers = true
+    }
+  ]
+}

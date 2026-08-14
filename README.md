@@ -24,7 +24,7 @@ Prerequisites for target machine:
 * Sign in to Zen and set keybinds and zoom and settings and extension settings and space settings
 * Pair headphones with better-control
 * Pair keyboard with better-control
-  * Hold Alt+Pn until Caps Lock flashes then press Pn+J once then pair
+  * Hold Alt+Pn until Caps Lock flashes then press Pn+J once then pair, trust, connect in bluetoothctl
 
 ## Todo
 * better-control dark theme
@@ -32,6 +32,7 @@ Prerequisites for target machine:
 * change 2fa code hotmail, not working
 
 * zed devcontainers (devsy)
+  * supports extensions?
 * localsend config
 * (jr-work)
   * battery indicator

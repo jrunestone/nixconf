@@ -2,7 +2,13 @@ export EZA_COLORS="xx=36:sn=36:sb=36:uu=36:uR=36:un=36:gu=36:gR=36:gn=36:da=36:o
 
 # go to dev project
 function d() {
-  cd $(find ~/src -maxdepth 2 -type d -name $1)
+  NAME=${1:-src}
+  cd $(find ~/.$USER/src -maxdepth 2 -type d -name $NAME)
+}
+
+# go to home meta dir
+function h() {
+  cd ~/.$USER
 }
 
 function redraw-prompt() {

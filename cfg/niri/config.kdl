@@ -1,6 +1,7 @@
 // startup
 spawn-sh-at-startup "swayidle -w -C $HOME/.config/swayidle/config"
 spawn-sh-at-startup "swaybg --image $HOME/.jr/wallpaper.png"
+spawn-sh-at-startup "ironbar --config $HOME/.config/ironbar/config.corn"
 
 // global settings
 prefer-no-csd
@@ -42,7 +43,6 @@ binds {
 	Mod+Ctrl+Right            repeat=false    { focus-monitor-right; }
 	Mod+Shift+WheelScrollUp   cooldown-ms=150 { focus-monitor-left; }
 	Mod+Shift+WheelScrollDown cooldown-ms=150 { focus-monitor-right; }
-	Mod+Ctrl+WheelScrollDown  cooldown-ms=150 { focus-workspace-down; }
   Mod+Ctrl+WheelScrollUp    cooldown-ms=150 { focus-workspace-up; }
 	Mod+Ctrl+WheelScrollDown  cooldown-ms=150 { focus-workspace-down; }
 	Mod+Alt+Left              repeat=false    { move-column-left; }
@@ -69,6 +69,7 @@ binds {
 	Mod+Insert repeat=false allow-when-locked=true { spawn "playerctl" "play-pause"; }
 
 	// misc
+	Mod+Ctrl+B      repeat=false { spawn "ironbar" "bar" "default" "toggle-visible"; }
 	Mod+Ctrl+Delete repeat=false { spawn "shutdown" "now"; }
 	Mod+L           repeat=false { spawn "veila" "lock"; }
 	Mod+Ctrl+L      repeat=false { spawn "pkill" "swayidle"; }
