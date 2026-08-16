@@ -18,22 +18,3 @@ Prerequisites for target machine:
 * All hosts read from hosts/base/{global.nix, host.nix}
 * All users read from hosts/base/user.nix
 * All hosts read from aspects/essential.nix
-
-## Post
-* Keyring has to be unlocked once
-* Sign in to Zen and set keybinds and zoom and settings and extension settings and space settings
-* Pair headphones with better-control
-* Pair keyboard with better-control
-  * Hold Alt+Pn until Caps Lock flashes then press Pn+J once then pair, trust, connect in bluetoothctl
-
-## Todo
-* better-control dark theme
-* [ssh] prompt
-* change 2fa code hotmail, not working
-
-* zed devcontainers (devsy)
-  * supports extensions?
-* localsend config
-* (jr-work)
-  * battery indicator
-* clock?
