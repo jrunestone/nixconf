@@ -74,6 +74,7 @@ button:active,
   background-color: var(--color-dark-primary);
 }
 
+.battery,
 .clock {
   font-weight: bold;
 }

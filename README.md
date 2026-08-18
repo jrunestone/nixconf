@@ -18,3 +18,11 @@ Prerequisites for target machine:
 * All hosts read from hosts/base/{global.nix, host.nix}
 * All users read from hosts/base/user.nix
 * All hosts read from aspects/essential.nix
+
+# Todo
+* Slack settings (zoom)
+* 1pass extension settings
+* proton pass extension settings
+* Perms on .ssh and .ssh/* no work
+* Add vpn indicator to bar
+* Calculator
