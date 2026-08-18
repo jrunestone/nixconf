@@ -21,7 +21,7 @@ Prerequisites for target machine:
 
 # Todo
 * Slack settings (zoom)
-* obsidian settings (zoom)
+* obsidian settings (zoom, extensions, vault dir)
 * 1pass extension settings
 * proton pass extension settings
 * Perms on .ssh and .ssh/* no work
