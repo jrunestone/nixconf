@@ -73,7 +73,6 @@
       hjem.users.${user.userName} = {
         files.".config/zen/profiles.ini".source = ../../../cfg/zen/profiles.ini;
         files.".config/zen/0.default/zen-keyboard-shortcuts.json".source = ../../../cfg/zen/zen-keyboard-shortcuts.json;
-        files.".config/zen/0.default/chrome/userChrome.css".source = ../../../cfg/zen/userChrome.css;
       };
     };
   }

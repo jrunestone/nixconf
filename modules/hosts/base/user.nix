@@ -23,11 +23,11 @@
       };
 
       systemd.tmpfiles.rules = [
-        "d /storage 0755 ${user.userName} users -"
         "d /etc/nixos/nixconf 0755 ${user.userName} users -"
-        "f /home/${user.userName}/.ssh 0644 ${user.userName}:users -"
-        "f /home/${user.userName}/.ssh/id_ed25519 0600 ${user.userName}:users -"
-        "f /home/${user.userName}/.ssh/id_ed25519.pub 0644 ${user.userName}:users -"
+        "z /storage 0755 ${user.userName} users -"
+        "z /home/${user.userName}/.ssh 0644 ${user.userName}:users -"
+        "z /home/${user.userName}/.ssh/id_ed25519 0600 ${user.userName}:users -"
+        "z /home/${user.userName}/.ssh/id_ed25519.pub 0644 ${user.userName}:users -"
       ];
     };
   };

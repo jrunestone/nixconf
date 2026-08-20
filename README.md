@@ -20,10 +20,6 @@ Prerequisites for target machine:
 * All hosts read from aspects/essential.nix
 
 # Todo
-* Slack settings (zoom)
-* obsidian settings (zoom, extensions, vault dir)
-* 1pass extension settings
-* proton pass extension settings
 * Perms on .ssh and .ssh/* no work
 * Add vpn indicator to bar
 * Calculator
