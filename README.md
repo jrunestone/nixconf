@@ -18,6 +18,12 @@ Prerequisites for target machine:
 * All hosts read from hosts/base/{global.nix, host.nix}
 * All users read from hosts/base/user.nix
 * All hosts read from aspects/essential.nix
+* Connect BT devices:
+  * $ bluetoothctl
+  * $ scan on
+  * $ pair <id>
+  * $ trust <id>
+  * $ connect <id>
 
 # Todo
 * Perms on .ssh and .ssh/* no work

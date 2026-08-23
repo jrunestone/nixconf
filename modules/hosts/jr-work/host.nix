@@ -22,9 +22,7 @@
 
     nixos = { inputs, config, pkgs, ... }: {
       environment.systemPackages = with pkgs; [
-        adwaita-icon-theme
-        adwaita-icon-theme-legacy
-        better-control
+
       ];
 
       hardware.bluetooth.enable = true;
