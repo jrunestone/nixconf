@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  den.aspects.jr-home.secrets.nixos = { host, user, lib }: {
+  den.aspects.jr-home.secrets.nixos = { host, user }: {
     imports = [ inputs.agenix.nixosModules.default ];
 
     age = {
