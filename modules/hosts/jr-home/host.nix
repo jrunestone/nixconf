@@ -51,6 +51,8 @@
         in
           ["${automount_opts},credentials=${config.age.secrets.omv-smb.path}"];
       };
+
+      users.users.jr.openssh.authorizedKeys.keys = [ (builtins.readFile ../jr-work/_cfg/jr-work.pub) ];
     };
   };
 }

@@ -31,3 +31,4 @@ Prerequisites for target machine:
 * Add vpn indicator to bar
 * Calculator
 * jr-home brightness
+* jr-home-jr-work authorized keys
