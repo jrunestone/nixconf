@@ -30,3 +30,4 @@ Prerequisites for target machine:
 * Perms on .ssh and .ssh/* no work
 * Add vpn indicator to bar
 * Calculator
+* jr-home brightness
