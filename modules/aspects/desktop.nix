@@ -13,6 +13,7 @@
       den.aspects.desktop.notes
       den.aspects.desktop.notify
       den.aspects.desktop.terminal
+      den.aspects.desktop.services
     ];
 
     nixos = { host, pkgs, ... }: {
@@ -22,7 +23,6 @@
         satty
         playerctl
         simp1e-cursors
-        swaybg
         libnotify
     	  xwayland-satellite
     	  xdg-desktop-portal-gtk
@@ -30,6 +30,7 @@
         spotify
         slack
         bruno
+        setxkbmap
       ];
 
       services.playerctld.enable = true;

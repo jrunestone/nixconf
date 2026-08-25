@@ -1,6 +1,6 @@
 :root {
-  --color-dark-primary: #1e1f21;
-  --color-dark-secondary: #000;
+  --color-dark-primary: #17181a;
+  --color-dark-secondary: #17181a;
   --color-white: #c5c8c6;
   --color-active: #f0c674;
   --color-urgent: #f0c674;
@@ -63,15 +63,21 @@ calendar button {
   background-color: var(--color-dark-primary);
 }
 
-button,
-calendar button:hover {
+button {
   background-color: var(--color-dark-secondary);
 }
 
 button:hover,
 button:active,
 *:selected {
-  background-color: var(--color-dark-primary);
+  background-color: #000;
+}
+
+.vpn {
+  background-color: var(--color-dark-secondary);
+  font-weight: bold;
+  padding-right: 10px;
+  padding-left: 15px;
 }
 
 .battery,

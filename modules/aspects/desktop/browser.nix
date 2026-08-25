@@ -8,7 +8,7 @@
       };
     };
 
-    prefs = userName: {
+    prefs = hostName: userName: {
       # dark theme
       "browser.theme.content-theme" = 0;
       "browser.tabs.insertAfterCurrent" = true;
@@ -20,9 +20,8 @@
       "browser.download.dir" = "/home/${userName}/tmp";
       "browser.startup.page" = 3;
       "browser.sessionstore.resume_from_crash" = true;
-      "layout.css.devPixelsPerPx" = "1.2";
       "layout.spellcheckDefault" = 0;
-      "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      "identity.fxaccounts.account.device.name" = "${hostName}";
       "zen.tabs.show-newtab-vertical" = false;
       "zen.welcome-screen.seen" = true;
       "zen.theme.gradient.show-custom-colors" = true;
@@ -44,7 +43,7 @@
             extraPrefs = lib.concatLines (
               lib.mapAttrsToList (
                 name: value: ''lockPref(${lib.strings.toJSON name}, ${lib.strings.toJSON value});''
-              ) (prefs user.userName)
+              ) (prefs host.hostName user.userName)
             );
 
             extraPolicies = {
@@ -69,6 +68,8 @@
           }
         )
       ];
+
+      environment.sessionVariables.MOZ_ENABLE_WAYLAND = "0";
 
       hjem.users.${user.userName} = {
         files.".config/zen/profiles.ini".source = ../../../cfg/zen/profiles.ini;

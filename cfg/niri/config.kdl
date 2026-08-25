@@ -1,7 +1,5 @@
 // startup
-spawn-sh-at-startup "swayidle -w -C $HOME/.config/swayidle/config"
-spawn-sh-at-startup "swaybg --image $HOME/.jr/wallpaper.png"
-spawn-sh-at-startup "ironbar --config $HOME/.config/ironbar/config.corn"
+spawn-at-startup "setxkbmap" "se"
 
 // global settings
 prefer-no-csd
@@ -60,7 +58,7 @@ binds {
 	// apps
   Mod+T repeat=false { spawn "ghostty"; }
   Mod+W repeat=false { spawn "zen"; }
-  Mod+N repeat=false { spawn "niri-scratchpad" "target" "--spawn" "obsidian" "appid" "obsidian"; }
+  Mod+N repeat=false { spawn "niri-scratchpad" "target" "--spawn" "obsidian" "appid" "md.Obsidian"; }
   Mod+S repeat=false { spawn "niri-scratchpad" "target" "--spawn" "spotify" "appid" "Spotify"; }
   Mod+X repeat=false { close-window; }
 
@@ -72,9 +70,10 @@ binds {
 	Mod+Ctrl+B      repeat=false { spawn "ironbar" "bar" "default" "toggle-visible"; }
 	Mod+Ctrl+Delete repeat=false { spawn "shutdown" "now"; }
 	Mod+L           repeat=false { spawn "veila" "lock"; }
-	Mod+Ctrl+L      repeat=false { spawn "pkill" "swayidle"; }
-	Mod+Alt+L       repeat=false { spawn-sh "pgrep -x swayidle || swayidle -w -C $HOME/.config/swayidle/config"; }
+	Mod+Ctrl+L      repeat=false { spawn "systemctl" "stop" "swayidle"; }
+	Mod+Alt+L       repeat=false { spawn "systemctl" "start" "swayidle"; }
 	Mod+Space       repeat=false { spawn "rofi" "-show" "drun"; }
+	Mod+Ctrl+Space  repeat=false { spawn "rofi" "-show" "calc" "-modi" "calc" "-no-show-match" "-no-sort" "-no-persist-history"; }
 	Mod+Shift+S     repeat=false { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
 	Mod+Ctrl+S      repeat=false { spawn-sh "grim -g \"$(slurp)\" - | satty --filename - --output-filename $HOME/tmp/$(date '+%Y-%m-%d_%H:%M:%S').png"; }
 }
@@ -89,7 +88,7 @@ window-rule {
 
 window-rule {
 	match app-id="Spotify"
-	match app-id="obsidian"
+	match app-id="md.Obsidian"
 	open-on-workspace "stash"
 	open-floating true
 }

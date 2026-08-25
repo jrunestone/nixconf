@@ -26,9 +26,5 @@ Prerequisites for target machine:
   * $ connect <id>
 
 # Todo
-* https://community.obsidian.md/plugins/nixsync
-* Perms on .ssh and .ssh/* no work
-* Add vpn indicator to bar
-* Calculator
+* Perms on .ssh and .ssh/* no work?
 * jr-home brightness
-* jr-home-jr-work authorized keys

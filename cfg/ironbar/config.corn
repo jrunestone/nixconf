@@ -8,10 +8,12 @@
     {
       type = "battery"
       show_icon = false
+      show_if = "[ -f /sys/class/power_supply/BAT0/capacity ]"
     }
     {
       type = "label"
-      label = "{{60000:echo \$RANDOM}} "
+      label = "{{60000:[[ \$(/run/current-system/sw/bin/curl -s https://integrity.st/iptest.php) = '1' ]] && echo '' || echo ''}}"
+      class = "vpn"
     }
     {
       type = "clock"
