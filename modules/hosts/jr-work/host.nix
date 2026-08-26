@@ -14,13 +14,13 @@
       den.aspects.jr-work.secrets
     ];
 
-    imports = [
-      inputs.nixos-hardware.nixosModules.common-cpu-intel
-      inputs.nixos-hardware.nixosModules.common-gpu-intel
-      inputs.nixos-hardware.nixosModules.common-pc-ssd
-    ];
+    nixos = { config, pkgs, ... }: {
+      imports = [
+        inputs.nixos-hardware.nixosModules.common-cpu-intel
+        inputs.nixos-hardware.nixosModules.common-gpu-intel
+        inputs.nixos-hardware.nixosModules.common-pc-ssd
+      ];
 
-    nixos = { inputs, config, pkgs, ... }: {
       environment.systemPackages = with pkgs; [
 
       ];

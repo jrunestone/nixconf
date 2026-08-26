@@ -14,24 +14,18 @@
       den.aspects.jr-home.secrets
     ];
 
-    imports = [
-      inputs.nixos-hardware.nixosModules.common-cpu-amd
-      inputs.nixos-hardware.nixosModules.common-gpu-amd
-      inputs.nixos-hardware.nixosModules.common-pc-ssd
-    ];
+    nixos = { config, pkgs, ... }: {
+      imports = [
+        inputs.nixos-hardware.nixosModules.common-cpu-amd
+        inputs.nixos-hardware.nixosModules.common-gpu-amd
+        inputs.nixos-hardware.nixosModules.common-pc-ssd
+      ];
 
-    nixos = { inputs, config, pkgs, ... }: {
       environment.systemPackages = with pkgs; [
         moonlight-qt
       ];
 
       programs.steam.enable = true;
-
-      # fix garbage bars/strips
-      boot.kernelParams = [
-        "amdgpu.sg_display=0"
-        "amdgpu.dcdebugmask=0x10"
-      ];
 
       hjem.users.jr.files.".jr/certs/rootCA.pem".source = config.age.secrets.rootCA-pem.path;
       hjem.users.jr.files.".jr/certs/localhost.pfx".source = config.age.secrets.localhost-pfx.path;

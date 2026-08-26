@@ -13,7 +13,7 @@
       after = [ "graphical-session.target" ];
 
       serviceConfig = {
-        ExecStart = "${pkgs.swayidle}/bin/swayidle swayidle -w -C /home/${user.userName}/.config/swayidle/config";
+        ExecStart = "${pkgs.swayidle}/bin/swayidle -w -C /home/${user.userName}/.config/swayidle/config";
         Restart = "on-failure";
       };
     };

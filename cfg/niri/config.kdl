@@ -1,5 +1,5 @@
 // startup
-spawn-at-startup "setxkbmap" "se"
+spawn-sh-at-startup "sleep 1 && setxkbmap se"
 
 // global settings
 prefer-no-csd
