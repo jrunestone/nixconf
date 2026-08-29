@@ -11,6 +11,10 @@
   den.default.nixos = { pkgs, ... }: {
     system.stateVersion = "26.05";
 
+    # pin kernel version to stable lts
+    # amd gpu has artifacts/stripes on screen on 6.18
+    boot.kernelPackages = pkgs.linuxPackages_6_6;
+
     time.timeZone = "Europe/Stockholm";
     console.keyMap = "sv-latin1";
 
