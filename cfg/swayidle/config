@@ -1,1 +1,1 @@
-timeout 600 'veila lock && niri msg action power-off-monitors'
+timeout 600 '/run/current-system/sw/bin/veila lock && /run/current-system/sw/bin/niri msg action power-off-monitors'
