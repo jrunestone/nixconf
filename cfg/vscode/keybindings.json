@@ -6,6 +6,12 @@
   },
 
   {
+    "key": "ctrl+'",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+
+  {
     "key": "ctrl+shift+d",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorReadOnly"
