@@ -27,4 +27,3 @@ Prerequisites for target machine:
 
 # Todo
 * Perms on .ssh and .ssh/* no work?
-* jr-work brightness, volume

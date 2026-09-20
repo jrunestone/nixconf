@@ -31,6 +31,7 @@
         slack
         bruno
         setxkbmap
+        xdg-utils
       ];
 
       services.playerctld.enable = true;

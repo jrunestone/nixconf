@@ -11,7 +11,7 @@
         {
           "foreground": "#BF616A",
           "style": "plain",
-          "template": "{{ if .Env.DEVENV_NAME }}[$.Env.DEVENV_NAME]{{ else }}{{ if .Env.IN_NIX_SHELL }}[shell]{{ end }}{{ end }} ",
+          "template": "{{ if .Env.DEVENV_NAME }}[nix:{{.Env.DEVENV_NAME}}]{{ else }}{{ if .Env.IN_NIX_SHELL }}[nix:shell]{{ end }}{{ end }} ",
           "type": "text"
         },
         {
