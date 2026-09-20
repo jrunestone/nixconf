@@ -65,6 +65,10 @@ binds {
 	// media
 	Mod+Pause  repeat=false allow-when-locked=true { spawn "playerctl" "play-pause"; }
 	Mod+Insert repeat=false allow-when-locked=true { spawn "playerctl" "play-pause"; }
+	XF86AudioRaiseVolume    allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+	XF86AudioLowerVolume    allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+	XF86MonBrightnessUp     allow-when-locked=true { spawn "brightnessctl" "set" "5%+"; }
+	XF86MonBrightnessDown   allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
 
 	// misc
 	Mod+Ctrl+B      repeat=false { spawn "ironbar" "bar" "default" "toggle-visible"; }

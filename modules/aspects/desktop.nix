@@ -22,6 +22,7 @@
         grim
         satty
         playerctl
+        brightnessctl
         simp1e-cursors
         libnotify
     	  xwayland-satellite
