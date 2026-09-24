@@ -41,11 +41,11 @@
       xdg.portal = {
         enable = true;
         extraPortals = [
-          pkgs.xdg-desktop-portal-gtk
           pkgs.xdg-desktop-portal-gnome
+          pkgs.xdg-desktop-portal-gtk
           pkgs.gnome-keyring
         ];
-        config.common.default = [ "gtk" ];
+        config.common.default = [ "gnome" "gtk" ];
       };
 
       programs.dconf.profiles.user.databases = [
