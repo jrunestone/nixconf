@@ -14,6 +14,7 @@
       den.aspects.desktop.notify
       den.aspects.desktop.terminal
       den.aspects.desktop.services
+      den.aspects.desktop.messaging
     ];
 
     nixos = { host, pkgs, ... }: {
@@ -29,7 +30,6 @@
     	  xdg-desktop-portal-gtk
     	  nautilus
         spotify
-        slack
         bruno
         setxkbmap
         xdg-utils

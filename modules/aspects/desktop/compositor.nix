@@ -2,6 +2,7 @@
   den.aspects.desktop.compositor.nixos = { host, user, config, pkgs, lib, ... }: {
     programs.niri.enable = true;
     environment.systemPackages = [ inputs.niri-scratchpad.packages.${pkgs.stdenv.hostPlatform.system}.default ];
+    systemd.user.services.niri.enableDefaultPath = false;
 
     hjem.users.${user.userName} = {
       files.".config/niri/config.kdl".source = ../../../cfg/niri/config.kdl;

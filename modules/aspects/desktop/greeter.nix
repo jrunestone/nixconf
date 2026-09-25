@@ -10,5 +10,7 @@
         };
       };
     };
+
+    boot.consoleLogLevel = 3;
   };
 }
