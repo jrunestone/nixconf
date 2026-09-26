@@ -19,9 +19,6 @@
       ];
     };
 
-    # fixes opening links in Zen running in X11 mode
-    programs.zsh.shellAliases.code = "DISPLAY=wayland-1 code";
-
     hjem.users.${user.userName} = {
       files.".config/zed/settings.json".source = ../../../cfg/zed/settings.json;
       files.".config/zed/keymap.json".source = ../../../cfg/zed/keymap.json;
