@@ -23,6 +23,7 @@
 
       environment.systemPackages = with pkgs; [
         moonlight-qt
+        prismlauncher
       ];
 
       programs.steam.enable = true;
