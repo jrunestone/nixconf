@@ -21,6 +21,7 @@
       "ctrl-shift-d": "editor::DuplicateLineUp",
       "shift-delete": "editor::DeleteLine",
       "ctrl-'": ["editor::ToggleComments", { "advance_downwards": false }],
+      "ctrl-shift-'": ["editor::ToggleBlockComments", { "advance_downwards": false }],
       "ctrl-enter": "editor::NewlineBelow",
       "ctrl-shift-enter": "editor::NewlineAbove",
       "ctrl-shift-space": "editor::ShowSignatureHelp",
