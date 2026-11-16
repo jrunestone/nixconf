@@ -24,6 +24,12 @@
           group = "users";
         };
 
+        rootCA-key-pem = {
+          file = ./_cfg/secrets/rootCA-key.pem.age;
+          owner = user.userName;
+          group = "users";
+        };
+
         localhost-pfx = {
           file = ./_cfg/secrets/localhost.pfx.age;
           owner = user.userName;

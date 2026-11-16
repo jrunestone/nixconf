@@ -2,7 +2,7 @@
 ## Install
 Prerequisites for target machine:
 1. Static IP in DHCP
-3. Must have secrets generated in the config repo with the TARGET host's ssh keys (new or existing) (`nix run github:ryantm/agenix -- -e xxx.age -i <path-to-key>` or `nix run github:ryantm/agenix -- -e xxx.age -i <path-to-key> < file`)
+3. Must have secrets generated in the config repo with the TARGET host's ssh keys (new or existing) (in secrets.nix folder: `nix run github:ryantm/agenix -- -e xxx.age -i <path-to-key>` or `nix run github:ryantm/agenix -- -e xxx.age -i <path-to-key> < file`)
 
 **Installation**
 1. Boot minimal installer
