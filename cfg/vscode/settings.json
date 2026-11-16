@@ -30,7 +30,7 @@
     {
       "name": "localhost",
       "pfxPath": "/home/jr/.jr/certs/localhost.pfx",
-      "pfxPassword": "changeit",
+      "pfxPassword": "",
       "trustInContainer": true
     }
   ],
