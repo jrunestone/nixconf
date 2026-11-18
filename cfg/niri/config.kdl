@@ -78,7 +78,7 @@ binds {
 	Mod+Alt+L       repeat=false { spawn "systemctl" "--user" "start" "swayidle"; }
 	Mod+Space       repeat=false { spawn "rofi" "-show" "drun"; }
 	Mod+Ctrl+Space  repeat=false { spawn "rofi" "-show" "calc" "-modi" "calc" "-no-show-match" "-no-sort" "-no-persist-history"; }
-	Mod+Shift+S     repeat=false { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
+	Mod+Shift+S     repeat=false { spawn-sh "grim -g \"$(slurp)\" - | tee $HOME/tmp/$(date '+%Y-%m-%d_%H:%M:%S').png | wl-copy"; }
 	Mod+Ctrl+S      repeat=false { spawn-sh "grim -g \"$(slurp)\" - | satty --filename - --output-filename $HOME/tmp/$(date '+%Y-%m-%d_%H:%M:%S').png"; }
 }
 
