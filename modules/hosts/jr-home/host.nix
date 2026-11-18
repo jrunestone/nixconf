@@ -28,7 +28,19 @@
 
       programs.steam.enable = true;
 
-      # fix garbage bars/strips on amd
+      # amd gpu has artifacts/stripes on later/earlier versions
+      boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_7_1.override {
+        argsOverride = rec {
+          version = "7.1.5";
+          modDirVersion = "7.1.5";
+          src = pkgs.fetchurl {
+            url = "https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.5.tar.xz";
+            sha256 = "1rs162gcf6hsafrrmp3y8k9myn20s3s62xdp4zf39pxw7imik812";
+          };
+        };
+      });
+
+      # also related to amd gpu
       boot.kernelParams = [
         "amdgpu.sg_display=0"
         "amdgpu.dcdebugmask=0x10"

@@ -11,20 +11,6 @@
   den.default.nixos = { pkgs, ... }: {
     system.stateVersion = "26.05";
 
-    # pin kernel version
-    # amd gpu has artifacts/stripes on later/earlier versions
-    #boot.kernelPackages = pkgs.linuxPackages_latest;
-    boot.kernelPackages = pkgs.linuxPackagesFor (pkgs.linux_7_1.override {
-      argsOverride = rec {
-        version = "7.1.5";
-        modDirVersion = "7.1.5";
-        src = pkgs.fetchurl {
-          url = "https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.5.tar.xz";
-          sha256 = "1rs162gcf6hsafrrmp3y8k9myn20s3s62xdp4zf39pxw7imik812";
-        };
-      };
-    });
-
     time.timeZone = "Europe/Stockholm";
     console.keyMap = "sv-latin1";
 
@@ -49,7 +35,6 @@
       };
     };
 
-    boot.initrd.systemd.enable = true;
     boot.loader.grub = {
       efiSupport = true;
       efiInstallAsRemovable = true;
